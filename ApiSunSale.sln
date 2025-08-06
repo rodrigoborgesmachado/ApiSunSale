@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 - Presentation", "1.1 - Presentation", "{48B84735-1A8B-4716-B61A-7E86491FF02D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 - Application", "1.2 - Application", "{E4EA5397-9D9A-43D2-9C35-8CAD46994A0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 - Domain", "1.3 - Domain", "{0B28779C-2AC4-44CB-8F8D-ACC56604E9D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4 - Infrastructure", "1.4 - Infrastructure", "{7EBAC08E-38A5-4B5A-B599-6E7C254BDED7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4.1 - Data", "1.4.1 - Data", "{BA10D4FA-E005-4242-B0FE-AFEBC1E7D2BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4.2 - CrossCutting", "1.4.2 - CrossCutting", "{B782D7C7-AFCA-4241-A833-CBE87DFF7505}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5 - Database", "1.5 - Database", "{CE6C4328-CBBC-4094-B886-DD64A06AF21A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ApiSunSale.Database", "ApiSunSale.Database\ApiSunSale.Database.sqlproj", "{A0828841-C53B-4539-BE95-B7C2887426E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0828841-C53B-4539-BE95-B7C2887426E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0828841-C53B-4539-BE95-B7C2887426E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0828841-C53B-4539-BE95-B7C2887426E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A0828841-C53B-4539-BE95-B7C2887426E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0828841-C53B-4539-BE95-B7C2887426E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0828841-C53B-4539-BE95-B7C2887426E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48B84735-1A8B-4716-B61A-7E86491FF02D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E4EA5397-9D9A-43D2-9C35-8CAD46994A0E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0B28779C-2AC4-44CB-8F8D-ACC56604E9D0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7EBAC08E-38A5-4B5A-B599-6E7C254BDED7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BA10D4FA-E005-4242-B0FE-AFEBC1E7D2BF} = {7EBAC08E-38A5-4B5A-B599-6E7C254BDED7}
+		{B782D7C7-AFCA-4241-A833-CBE87DFF7505} = {7EBAC08E-38A5-4B5A-B599-6E7C254BDED7}
+		{CE6C4328-CBBC-4094-B886-DD64A06AF21A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A0828841-C53B-4539-BE95-B7C2887426E8} = {CE6C4328-CBBC-4094-B886-DD64A06AF21A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CA3F7FE-9923-45B3-84CA-DDACB14AE351}
+	EndGlobalSection
+EndGlobal
