@@ -84,20 +84,21 @@ CREATE TABLE [Questoes] (
     [Campoquestao] VARCHAR (8000) DEFAULT ('') NOT NULL,
     [Observacaoquestao] VARCHAR (8000) DEFAULT ('') NOT NULL,
     [Materia] VARCHAR (300)  DEFAULT ('') NOT NULL,
-    [Codigoprova] [bigint] IDENTITY(1,1)            DEFAULT ((0)) NOT NULL,
+    [Codigoprova] [bigint]            DEFAULT ((0)) NOT NULL,
     [Numeroquestao] VARCHAR (20)   NULL,
     [Ativo] CHAR (1)       DEFAULT ('1') NOT NULL,
     [Updatedby] [bigint],
     [Updatedon] DATETIME,
     [Createdby] [bigint],
-    [Assunto] VARCHAR(255) NULL, 
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    [Assunto] VARCHAR(255) NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigoprova]) REFERENCES [Prova]([Codigo])
 );
 
 -- START ../Tables/Respostasquestoes.sql
 CREATE TABLE [Respostasquestoes] (
     [Codigo] [bigint] IDENTITY(1,1)            NOT NULL,
-    [Codigoquestao] [bigint] IDENTITY(1,1)            DEFAULT ((0)) NOT NULL,
+    [Codigoquestao] [bigint]            DEFAULT ((0)) NOT NULL,
     [Dataregistro] DATETIME       DEFAULT ('') NOT NULL,
     [Textoresposta] VARCHAR (8000) DEFAULT ('') NOT NULL,
     [Certa] CHAR (1)       DEFAULT ('0') NOT NULL,
@@ -109,10 +110,11 @@ CREATE TABLE [Respostasquestoes] (
 -- START ../Tables/AcaoUsuario.sql
 CREATE TABLE [Acaousuario] (
     [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
-    [Codigousuario] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
+    [Codigousuario] [bigint]           DEFAULT ((0)) NOT NULL,
     [Acao] VARCHAR (200) DEFAULT ('') NOT NULL,
     [Dataregistro] DATETIME      NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigousuario]) REFERENCES [USUARIOS]([Id])
 );
 
 -- START ../Tables/Alimentos.sql
@@ -155,19 +157,21 @@ CREATE TABLE [dbo].[Alimentos]
 -- START ../Tables/AnexoResposta.sql
 CREATE TABLE [Anexoresposta] (
     [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
-    [Codigoquestao] [bigint] IDENTITY(1,1)             DEFAULT ((0)) NOT NULL,
+    [Codigoquestao] [bigint]             DEFAULT ((0)) NOT NULL,
     [Dataregistro] DATETIME        DEFAULT ('') NOT NULL,
     [Anexo] VARBINARY (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigoquestao]) REFERENCES [Questoes]([Codigo])
 );
 
 -- START ../Tables/AnexosQuestoes.sql
 CREATE TABLE [Anexosquestoes] (
     [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
-    [Codigoquestao] [bigint] IDENTITY(1,1)             DEFAULT ((0)) NOT NULL,
+    [Codigoquestao] [bigint]             DEFAULT ((0)) NOT NULL,
     [Dataregistro] DATETIME        DEFAULT ('') NOT NULL,
     [Anexo] VARBINARY (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigoquestao]) REFERENCES [Questoes]([Codigo])
 );
 
 -- START ../Tables/Apresentacao.sql
@@ -198,12 +202,12 @@ CREATE TABLE [dbo].[Avaliacao]
 )
 -- START ../Tables/Campos.sql
 CREATE TABLE [Campos] (
-    [Codigo] [bigint] IDENTITY(1,1)             DEFAULT ((0)) NOT NULL,
-    [Codigotabela] [bigint] IDENTITY(1,1)             DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
+    [Codigotabela] [bigint]             DEFAULT ((0)) NOT NULL,
     [Nome] VARCHAR (50)    DEFAULT ('') NOT NULL,
     [Chave] CHAR (1)        DEFAULT ('0') NOT NULL,
     [Dominio] VARCHAR (100)   DEFAULT ('') NOT NULL,
-    [Codigotipo] [bigint] IDENTITY(1,1)             DEFAULT ((0)) NOT NULL,
+    [Codigotipo] [bigint]             DEFAULT ((0)) NOT NULL,
     [Naonulo] CHAR (1)        DEFAULT ('0') NOT NULL,
     [Unico] CHAR (1)        DEFAULT ('0') NOT NULL,
     [Checar] VARCHAR (300)   DEFAULT ('') NOT NULL,
@@ -337,9 +341,10 @@ CREATE TABLE [Email] (
 -- START ../Tables/Emailanexos.sql
 CREATE TABLE [Emailanexos] (
     [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
-    [Codigoemail] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
+    [Codigoemail] [bigint]           DEFAULT ((0)) NOT NULL,
     [Arquivo] VARBINARY (1) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigoemail]) REFERENCES [Email]([Codigo])
 );
 
 -- START ../Tables/Emailbackup.sql
@@ -406,12 +411,13 @@ create table Metas(
 )
 -- START ../Tables/Modulos.sql
 CREATE TABLE [Modulos] (
-    [Codigo] [bigint] IDENTITY(1,1)            DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)            NOT NULL,
     [Nomemodulo] VARCHAR (100)  DEFAULT ('') NOT NULL,
     [Descricao] VARCHAR (1000) NULL,
     [Sequenciaabertura] VARCHAR (1000) NULL,
-    [Codigoprojeto] [bigint] IDENTITY(1,1)            DEFAULT ((0)) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC, [Codigoprojeto] ASC)
+    [Codigoprojeto] [bigint]            DEFAULT ((0)) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC, [Codigoprojeto] ASC),
+    FOREIGN KEY ([Codigoprojeto]) REFERENCES [Projeto]([Codigo])
 );
 
 -- START ../Tables/Notascortesisu.sql
@@ -614,8 +620,8 @@ CREATE TABLE [Recuperasenhacrudforms] (
 
 -- START ../Tables/Relacao.sql
 CREATE TABLE [Relacao] (
-    [Codigo] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
-    [Codigoprojeto] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
+    [Codigoprojeto] [bigint]           DEFAULT ((0)) NOT NULL,
     [Tabelaorigem] [bigint]           DEFAULT ((0)) NOT NULL,
     [Campoorigem] [bigint]           DEFAULT ((0)) NOT NULL,
     [Tabeladestino] [bigint]           DEFAULT ((0)) NOT NULL,
@@ -623,7 +629,8 @@ CREATE TABLE [Relacao] (
     [Cardinalidadeorigem] VARCHAR (1)   DEFAULT ('') NOT NULL,
     [Cardinalidadedestino] VARCHAR (1)   DEFAULT ('') NOT NULL,
     [Foreingkey] VARCHAR (200) NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigoprojeto]) REFERENCES [Projeto]([Codigo])
 );
 
 -- START ../Tables/Respostasavaliacoes.sql
@@ -641,11 +648,14 @@ CREATE TABLE [dbo].[Respostasavaliacoes]
 -- START ../Tables/Respostasusuarios.sql
 CREATE TABLE [Respostasusuarios] (
     [Codigo] [bigint] IDENTITY(1,1)      NOT NULL,
-    [Codigousuario] [bigint] IDENTITY(1,1)      DEFAULT ((0)) NOT NULL,
-    [Codigoresposta] [bigint] IDENTITY(1,1)      DEFAULT ((0)) NOT NULL,
+    [Codigousuario] [bigint]      DEFAULT ((0)) NOT NULL,
+    [Codigoresposta] [bigint]      DEFAULT ((0)) NOT NULL,
     [Dataresposta] DATETIME NOT NULL,
-    [Codigoquestao] [bigint] IDENTITY(1,1),
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    [Codigoquestao] [bigint],
+    PRIMARY KEY CLUSTERED ([Codigo] ASC),
+    FOREIGN KEY ([Codigousuario]) REFERENCES [Usuarios]([Id]),
+    FOREIGN KEY ([Codigoresposta]) REFERENCES [Respostasquestoes]([Codigo]),
+    FOREIGN KEY ([Codigoquestao]) REFERENCES [Questoes]([Codigo])
 );
 
 -- START ../Tables/Resultadossoletrando.sql
@@ -709,9 +719,9 @@ CREATE TABLE [Tabelas] (
 
 -- START ../Tables/Tabelasmodulos.sql
 CREATE TABLE [Tabelasmodulos] (
-    [Codigotabela] [bigint] IDENTITY(1,1) DEFAULT ((0)) NOT NULL,
-    [Codigocampo] [bigint] IDENTITY(1,1) DEFAULT ((0)) NOT NULL,
-    [Codigomodulo] [bigint] IDENTITY(1,1) DEFAULT ((0)) NOT NULL,
+    [Codigotabela] [bigint] NOT NULL,
+    [Codigocampo] [bigint] NOT NULL,
+    [Codigomodulo] [bigint] NOT NULL,
     PRIMARY KEY CLUSTERED ([Codigotabela] ASC, [Codigocampo] ASC, [Codigomodulo] ASC)
 );
 

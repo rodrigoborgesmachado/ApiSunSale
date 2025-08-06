@@ -1,6 +1,6 @@
 CREATE TABLE [Tabelasmodulos] (
-    [Codigotabela] [bigint] IDENTITY(1,1) DEFAULT ((0)) NOT NULL,
-    [Codigocampo] [bigint] IDENTITY(1,1) DEFAULT ((0)) NOT NULL,
-    [Codigomodulo] [bigint] IDENTITY(1,1) DEFAULT ((0)) NOT NULL,
+    [Codigotabela] [bigint] NOT NULL,
+    [Codigocampo] [bigint] NOT NULL,
+    [Codigomodulo] [bigint] NOT NULL,
     PRIMARY KEY CLUSTERED ([Codigotabela] ASC, [Codigocampo] ASC, [Codigomodulo] ASC)
 );
