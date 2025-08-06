@@ -1,0 +1,4 @@
+CREATE TABLE [Logg] (
+    [TipoLog] CHAR (1) DEFAULT ('0') NOT NULL,
+    PRIMARY KEY CLUSTERED ([TipoLog] ASC)
+);

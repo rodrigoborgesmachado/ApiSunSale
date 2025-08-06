@@ -1,0 +1,22 @@
+CREATE TABLE [Oleosessenciais] (
+    [Codigo] [bigint IDENTITY(1,1)]            NOT NULL,
+    [Codigoproduto] VARCHAR (20)   NULL,
+    [Nome] VARCHAR (300)  DEFAULT ('') NOT NULL,
+    [Tamanho] VARCHAR (50)   NULL,
+    [Precoregular] VARCHAR (50)   NULL,
+    [Precomembros] VARCHAR (50)   NULL,
+    [Pv] VARCHAR (20)   DEFAULT ('') NOT NULL,
+    [Modousar] VARCHAR (4000) NULL,
+    [Descricao] VARCHAR (4000) NULL,
+    [Palavraschaves] VARCHAR (4000) DEFAULT ('') NOT NULL,
+    [Cor] VARCHAR (300)  NULL,
+    [Beneficiosprimarios] VARCHAR (4000) DEFAULT ('') NOT NULL,
+    [Descricaoaromatica] VARCHAR (4000) DEFAULT ('') NOT NULL,
+    [Metodoextracao] VARCHAR (4000) NULL,
+    [Parteplanta] VARCHAR (1000) NULL,
+    [Componentesquimicos] VARCHAR (1000) NULL,
+    [Usos] VARCHAR (4000) NULL,
+    [Precaucoes] VARCHAR (4000) NULL,
+    [Tipoproduto] VARCHAR (100)  DEFAULT ('OLEO') NOT NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
