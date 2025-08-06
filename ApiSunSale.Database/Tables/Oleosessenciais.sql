@@ -1,5 +1,5 @@
 CREATE TABLE [Oleosessenciais] (
-    [Codigo] [bigint IDENTITY(1,1)]            NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)            NOT NULL,
     [Codigoproduto] VARCHAR (20)   NULL,
     [Nome] VARCHAR (300)  DEFAULT ('') NOT NULL,
     [Tamanho] VARCHAR (50)   NULL,

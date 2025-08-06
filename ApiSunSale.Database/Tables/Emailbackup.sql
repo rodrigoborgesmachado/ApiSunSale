@@ -1,5 +1,5 @@
 CREATE TABLE [Emailbackup] (
-    [Codigo] [bigint IDENTITY(1,1)]            NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)            NOT NULL,
     [Destinatario] VARCHAR (300)  NOT NULL,
     [Assunto] VARCHAR (300)  NOT NULL,
     [Texto] VARCHAR (8000) NOT NULL,

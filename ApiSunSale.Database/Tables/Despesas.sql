@@ -1,5 +1,5 @@
 CREATE TABLE [Despesas] (
-    [Codigo] [bigint IDENTITY(1,1)]           NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
     [Datainsercao] DATETIME      NOT NULL,
     [Datadespesa] VARCHAR (30)  DEFAULT ('') NOT NULL,
     [Descricao] VARCHAR (300) DEFAULT ('') NOT NULL,

@@ -1,5 +1,5 @@
 CREATE TABLE [Clientes] (
-    [Codigo] [bigint IDENTITY(1,1)]            DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)            DEFAULT ((0)) NOT NULL,
     [Razaosocial] VARCHAR (1000) DEFAULT ('') NOT NULL,
     [Nomefantasia] VARCHAR (1000) DEFAULT ('') NOT NULL,
     [Cnpj] CHAR (18)      DEFAULT ('') NOT NULL,

@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Questoesavaliacao]
 (
-	[Id] [bigint IDENTITY(1,1)] NOT NULL PRIMARY KEY,
+	[Id] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[Createdon] DATETIME not null,
     [Createdby] [bigint] not null,
 	[Idavaliacao] [bigint] not null,

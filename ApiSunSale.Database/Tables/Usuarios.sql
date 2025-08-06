@@ -1,5 +1,5 @@
 CREATE TABLE [dbo].[Usuarios](
-	[Id] [bigint IDENTITY(1,1)] NOT NULL,
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Login] [varchar](50) NOT NULL,
 	[Pass] [varchar](12) NOT NULL,
 	[Nome] [varchar](50) NOT NULL,

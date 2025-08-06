@@ -1,6 +1,6 @@
 CREATE TABLE [Relacao] (
-    [Codigo] [bigint IDENTITY(1,1)]           DEFAULT ((0)) NOT NULL,
-    [Codigoprojeto] [bigint IDENTITY(1,1)]           DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
+    [Codigoprojeto] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
     [Tabelaorigem] [bigint]           DEFAULT ((0)) NOT NULL,
     [Campoorigem] [bigint]           DEFAULT ((0)) NOT NULL,
     [Tabeladestino] [bigint]           DEFAULT ((0)) NOT NULL,

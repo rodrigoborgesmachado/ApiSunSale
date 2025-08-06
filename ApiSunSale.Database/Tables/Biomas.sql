@@ -1,5 +1,5 @@
 CREATE TABLE [Biomas] (
-    [Id] [bigint IDENTITY(1,1)]            NOT NULL,
+    [Id] [bigint] IDENTITY(1,1)            NOT NULL,
     [Nome] VARCHAR (200)  NULL,
     [Distribuicao] VARCHAR (200)  NULL,
     [Caracteristicas] VARCHAR (8000) NULL,

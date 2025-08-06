@@ -1,5 +1,5 @@
 CREATE TABLE [Verboconjugado] (
-    [Codigo] [bigint IDENTITY(1,1)]           NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
     [Datacriacao] DATETIME      NOT NULL,
     [Verbo] VARCHAR (500) DEFAULT ('') NOT NULL,
     [Presente] VARCHAR (500) DEFAULT ('') NOT NULL,

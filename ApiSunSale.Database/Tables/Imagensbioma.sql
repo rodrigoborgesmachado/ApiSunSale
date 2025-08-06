@@ -1,5 +1,5 @@
 CREATE TABLE [Imagensbioma] (
-    [Id] [bigint IDENTITY(1,1)]           NOT NULL,
+    [Id] [bigint] IDENTITY(1,1)           NOT NULL,
     [Idbioma] [bigint]           NOT NULL,
     [Caminho] VARCHAR (300) NULL,
     [Idusuario] [bigint]           NOT NULL,

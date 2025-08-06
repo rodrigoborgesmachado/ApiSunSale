@@ -1,5 +1,5 @@
 CREATE TABLE [Usuarioconcursando] (
-    [Codigo] [bigint IDENTITY(1,1)]           NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
     [Datanascimento] DATE          NOT NULL,
     [Email] VARCHAR (300) NOT NULL,
     [Nome] VARCHAR (200) NOT NULL,

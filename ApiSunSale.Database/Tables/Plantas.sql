@@ -1,5 +1,5 @@
 CREATE TABLE [Plantas] (
-    [Id] [bigint IDENTITY(1,1)]            NOT NULL,
+    [Id] [bigint] IDENTITY(1,1)            NOT NULL,
     [Idbioma] [bigint]            NOT NULL,
     [Nomecientifico] VARCHAR (200)  NULL,
     [Nomepopular] VARCHAR (200)  NULL,

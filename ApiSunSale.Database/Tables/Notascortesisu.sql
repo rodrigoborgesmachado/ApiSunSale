@@ -3,7 +3,7 @@ CREATE TABLE [dbo].[Notascortesisu]
 	[Id] BIGINT NOT NULL PRIMARY KEY,
 	[Year] [bigint] not null,
 	[Numeroedicao] char(1) not null,
-	[Codigoinstituicaoensino] [bigint IDENTITY(1,1)] not null,
+	[Codigoinstituicaoensino] [bigint] IDENTITY(1,1) not null,
 	[Nomeinstituicao] varchar(500) not null,
 	[Siglainstituicao] varchar(255) not null,
 	[Organizacaoacademica] varchar(255) not null,

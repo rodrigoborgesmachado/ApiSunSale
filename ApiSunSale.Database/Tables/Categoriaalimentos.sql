@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Categoriaalimentos]
 (
-	[Codigo] [bigint IDENTITY(1,1)] NOT NULL PRIMARY KEY,
+	[Codigo] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
     [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
 	[Descricao] VARCHAR(255) NOT NULL

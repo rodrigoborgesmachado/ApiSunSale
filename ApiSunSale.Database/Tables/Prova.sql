@@ -1,5 +1,5 @@
 CREATE TABLE [Prova] (
-    [Codigo] [bigint IDENTITY(1,1)]             NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
     [Nomeprova] VARCHAR (500)   DEFAULT ('') NOT NULL,
     [Local] VARCHAR (500)   DEFAULT ('') NOT NULL,
     [Tipoprova] VARCHAR (100)   DEFAULT ('') NOT NULL,

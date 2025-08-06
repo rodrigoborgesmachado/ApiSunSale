@@ -1,7 +1,0 @@
-﻿CREATE TABLE [dbo].[CategoriaAlimentos]
-(
-	[Codigo] INT NOT NULL PRIMARY KEY,
-	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
-    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
-	[Descricao] VARCHAR(255) NOT NULL
-)

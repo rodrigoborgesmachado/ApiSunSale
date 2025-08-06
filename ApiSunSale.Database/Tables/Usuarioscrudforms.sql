@@ -1,5 +1,5 @@
 CREATE TABLE [Usuarioscrudforms] (
-    [Codigo] [bigint IDENTITY(1,1)]           NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
     [Login] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Senha] VARCHAR (20)  DEFAULT ('') NOT NULL,
     [Administrador] CHAR (1)      DEFAULT ('0') NOT NULL,

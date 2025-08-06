@@ -1,5 +1,5 @@
 CREATE TABLE [Email] (
-    [Codigo] [bigint IDENTITY(1,1)]             NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
     [Destinatario] VARCHAR (300)   DEFAULT ('') NOT NULL,
     [Assunto] VARCHAR (300)   DEFAULT ('') NOT NULL,
     [Texto] VARBINARY (MAX) NULL,

@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Alimentos]
 (
-	[Codigo] [bigint IDENTITY(1,1)] NOT NULL PRIMARY KEY,
+	[Codigo] [bigint] IDENTITY(1,1) NOT NULL PRIMARY KEY,
     [Categoriacodigo] [bigint] NOT NULL,
     [Created] DATETIME NOT NULL DEFAULT GETDATE(),
     [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
