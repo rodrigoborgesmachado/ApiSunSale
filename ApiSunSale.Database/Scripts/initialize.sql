@@ -77,6 +77,26 @@ CREATE TABLE [Imagensplanta] (
     FOREIGN KEY ([Idusuario]) REFERENCES [USUARIOS] ([Id])
 );
 
+-- START ../Tables/Prova.sql
+CREATE TABLE [Prova] (
+    [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
+    [Nomeprova] VARCHAR (500)   DEFAULT ('') NOT NULL,
+    [Local] VARCHAR (500)   DEFAULT ('') NOT NULL,
+    [Tipoprova] VARCHAR (100)   DEFAULT ('') NOT NULL,
+    [Dataaplicacao] VARCHAR (10)    DEFAULT ('') NOT NULL,
+    [Prova] VARBINARY (MAX) NULL,
+    [Gabarito] VARBINARY (MAX) NULL,
+    [Observacaoprova] VARCHAR (3000)  NULL,
+    [Observacaogabarito] VARCHAR (2000)  DEFAULT ('') NOT NULL,
+    [Dataregistro] DATETIME        NOT NULL,
+    [Banca] VARCHAR (1000)  NULL,
+    [Updatedby] [bigint],
+    [Updatedon] DATETIME,
+    [Createdby] [bigint],
+    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+
 -- START ../Tables/Questoes.sql
 CREATE TABLE [Questoes] (
     [Codigo] [bigint] IDENTITY(1,1)            NOT NULL,
@@ -244,7 +264,7 @@ CREATE TABLE [Chavesjwt] (
 
 -- START ../Tables/Clientes.sql
 CREATE TABLE [Clientes] (
-    [Codigo] [bigint] IDENTITY(1,1)            DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
     [Razaosocial] VARCHAR (1000) DEFAULT ('') NOT NULL,
     [Nomefantasia] VARCHAR (1000) DEFAULT ('') NOT NULL,
     [Cnpj] CHAR (18)      DEFAULT ('') NOT NULL,
@@ -260,7 +280,7 @@ CREATE TABLE [Clientes] (
 -- START ../Tables/CodigosTable.sql
 CREATE TABLE [CodigosTable] (
     [Tabela] VARCHAR (30) NOT NULL,
-    [Codigo] [bigint] IDENTITY(1,1)          DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
     PRIMARY KEY CLUSTERED ([Tabela] ASC)
 );
 
@@ -329,19 +349,20 @@ CREATE TABLE [Despesas] (
 
 -- START ../Tables/Email.sql
 CREATE TABLE [Email] (
-    [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
-    [Destinatario] VARCHAR (300)   DEFAULT ('') NOT NULL,
-    [Assunto] VARCHAR (300)   DEFAULT ('') NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
+    [Destinatario] VARCHAR (300) DEFAULT ('') NOT NULL,
+    [Assunto] VARCHAR (300) DEFAULT ('') NOT NULL,
     [Texto] VARBINARY (MAX) NULL,
-    [Dataenvio] DATETIME        NOT NULL,
-    [Status] CHAR (1)        DEFAULT ('0') NOT NULL,
-    [Observacao] VARCHAR (1000)  NULL
+    [Dataenvio] DATETIME NOT NULL,
+    [Status] CHAR (1) DEFAULT ('0') NOT NULL,
+    [Observacao] VARCHAR (1000) NULL,
+    CONSTRAINT PK_Email PRIMARY KEY CLUSTERED ([Codigo] ASC)
 );
 
 -- START ../Tables/Emailanexos.sql
 CREATE TABLE [Emailanexos] (
-    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
-    [Codigoemail] [bigint]           DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
+    [Codigoemail] [bigint] DEFAULT ((0)) NOT NULL,
     [Arquivo] VARBINARY (1) NOT NULL,
     PRIMARY KEY CLUSTERED ([Codigo] ASC),
     FOREIGN KEY ([Codigoemail]) REFERENCES [Email]([Codigo])
@@ -409,6 +430,18 @@ create table Metas(
 	Email varchar(255) not null,
 	DataObjetivo datetime not null
 )
+
+-- START ../Tables/Projeto.sql
+CREATE TABLE [Projeto] (
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
+    [Nome] VARCHAR (50)  DEFAULT ('') NOT NULL,
+    [Descricao] VARCHAR (400) NULL,
+    [Status] CHAR (1)      NULL,
+    [Git] VARCHAR (200) DEFAULT ('-') NOT NULL,
+    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+);
+
+
 -- START ../Tables/Modulos.sql
 CREATE TABLE [Modulos] (
     [Codigo] [bigint] IDENTITY(1,1)            NOT NULL,
@@ -536,34 +569,6 @@ create table Postagem(
 	Capa varchar(255) not null,
 	Curtidas int default 0 not null
 )
--- START ../Tables/Projeto.sql
-CREATE TABLE [Projeto] (
-    [Codigo] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
-    [Nome] VARCHAR (50)  DEFAULT ('') NOT NULL,
-    [Descricao] VARCHAR (400) NULL,
-    [Status] CHAR (1)      NULL,
-    [Git] VARCHAR (200) DEFAULT ('-') NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
-);
-
--- START ../Tables/Prova.sql
-CREATE TABLE [Prova] (
-    [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
-    [Nomeprova] VARCHAR (500)   DEFAULT ('') NOT NULL,
-    [Local] VARCHAR (500)   DEFAULT ('') NOT NULL,
-    [Tipoprova] VARCHAR (100)   DEFAULT ('') NOT NULL,
-    [Dataaplicacao] VARCHAR (10)    DEFAULT ('') NOT NULL,
-    [Prova] VARBINARY (MAX) NULL,
-    [Gabarito] VARBINARY (MAX) NULL,
-    [Observacaoprova] VARCHAR (3000)  NULL,
-    [Observacaogabarito] VARCHAR (2000)  DEFAULT ('') NOT NULL,
-    [Dataregistro] DATETIME        NOT NULL,
-    [Banca] VARCHAR (1000)  NULL,
-    [Updatedby] [bigint],
-    [Updatedon] DATETIME,
-    [Createdby] [bigint],
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
-);
 
 -- START ../Tables/Questoesavaliacao.sql
 CREATE TABLE [dbo].[Questoesavaliacao]
@@ -698,7 +703,7 @@ create table Simulados(
 )
 -- START ../Tables/Tabela.sql
 CREATE TABLE [Tabela] (
-    [Codigo] [bigint] IDENTITY(1,1)           DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
     [Projeto] [bigint]           DEFAULT ((0)) NOT NULL,
     [Nome] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Descricao] VARCHAR (400) NULL,
@@ -737,7 +742,7 @@ CREATE TABLE [Teste] (
 
 -- START ../Tables/Tipocampo.sql
 CREATE TABLE [Tipocampo] (
-    [Codigo] [bigint] IDENTITY(1,1)          DEFAULT ((0)) NOT NULL,
+    [Codigo] [bigint] IDENTITY(1,1) NOT NULL,
     [Nome] VARCHAR (50) DEFAULT ('') NOT NULL,
     PRIMARY KEY CLUSTERED ([Codigo] ASC, [Nome] ASC)
 );
