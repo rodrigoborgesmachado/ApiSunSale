@@ -1,9 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Verbos 
+    public class Verbos : BaseEntity
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public string Palavra { get; set; }
-        public DateTime Datainsercao { get; set; }
     }
 }

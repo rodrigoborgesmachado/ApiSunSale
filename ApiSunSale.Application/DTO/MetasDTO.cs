@@ -1,8 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class MetasDTO 
+    public class MetasDTO : BaseDTO
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Meta { get; set; }
         public string Email { get; set; }
         public DateTime Dataobjetivo { get; set; }

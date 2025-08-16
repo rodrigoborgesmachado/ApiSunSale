@@ -1,6 +1,6 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class UsuariosViewModel 
+    public class UsuariosViewModel : BaseViewModel
     {
         public long Id { get; set; }
         public string Login { get; set; }

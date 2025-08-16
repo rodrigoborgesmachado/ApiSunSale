@@ -1,9 +1,9 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class VerificacaousuarioDTO 
+    public class VerificacaousuarioDTO : BaseDTO
     {
-        public int Codigo { get; set; }
-        public string Guidtext { get; set; }
-        public int Codigousuario { get; set; }
+        public long Id { get; set; }
+        public string Guid { get; set; }
+        public int Idusuario { get; set; }
     }
 }

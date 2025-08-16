@@ -101,8 +101,7 @@ CREATE TABLE [Cartaocreditodevtools] (
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Numerocartao] VARCHAR (100) DEFAULT ('') NOT NULL UNIQUE,
     [Datavalidade] VARCHAR (50)  DEFAULT ('') NOT NULL,
-    [Codigoseguranca] CHAR (3)      DEFAULT ('') NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    [Codigoseguranca] CHAR (3)      DEFAULT ('') NOT NULL
 );
 GO
 
@@ -357,8 +356,8 @@ create table ComentariosQuestoes(
     [IsActive] [tinyint] NOT NULL DEFAULT 1,
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
 	[Comentario] varchar(MAX) not null,
-	[IdUsuario] int not null,
-	[IdQuestao] int not null,
+	[IdUsuario] [bigint] not null,
+	[IdQuestao] [bigint] not null,
     FOREIGN KEY ([IdUsuario]) REFERENCES [Usuarios]([Id]),
     FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
 );
@@ -372,8 +371,8 @@ create table Simulados(
 	[IsActive] [tinyint] NOT NULL DEFAULT 1,
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
 	Respostas varchar(MAX) not null,
-	IdUsuario int not null,
-	IdProva int not null,
+	IdUsuario [bigint] not null,
+	IdProva [bigint] not null,
 	QuantidadeQuestoes int not null,
 	QuantidadeCertas int not null,
 	Tempo int not null,
@@ -498,12 +497,8 @@ CREATE TABLE [Logger](
 	[MethodName] [nvarchar](255) NULL,
 	[MethodSignature] [nvarchar](255) NULL,
 	[MethodParameters] [nvarchar](255) NULL,
-	[StackTrace] [nvarchar](max) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[StackTrace] [nvarchar](max) NULL
+	)
 GO
 
 -- START AnexoResposta.sql
@@ -591,8 +586,7 @@ CREATE TABLE [Crudformsinstalador] (
     [IsActive] [tinyint] NOT NULL DEFAULT 1,
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Versao] VARCHAR (10)  DEFAULT ('') NOT NULL,
-    [Diretorio] VARCHAR (300) DEFAULT ('') NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    [Diretorio] VARCHAR (300) DEFAULT ('') NOT NULL
 );
 GO
 
@@ -607,8 +601,7 @@ CREATE TABLE [Contabancofordev] (
     [Agencia] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Banco] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Cidade] VARCHAR (150) DEFAULT ('') NOT NULL,
-    [Estado] CHAR (2)      DEFAULT ('') NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    [Estado] CHAR (2)      DEFAULT ('') NOT NULL
 );
 GO
 
@@ -773,4 +766,3 @@ CREATE TABLE [Respostasusuarios] (
     FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
 );
 GO
-

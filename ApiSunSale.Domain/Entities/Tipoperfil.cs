@@ -1,8 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Tipoperfil 
+    public class Tipoperfil : BaseEntity
     {
-        public string Id { get; set; }
+        public long Id { get; set; }
         public string Descricao { get; set; }
     }
 }

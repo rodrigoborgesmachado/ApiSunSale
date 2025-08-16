@@ -1,7 +1,8 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class EmpresafordevViewModel 
+    public class EmpresafordevViewModel : BaseViewModel
     {
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Cnpj { get; set; }
         public string Ie { get; set; }

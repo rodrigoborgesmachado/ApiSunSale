@@ -1,8 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class LicencassunsaleproDTO 
+    public class LicencassunsaleproDTO : BaseDTO
     {
-        public int Codigo { get; set; }
+        public long Id { get; set; }
         public string Licenca { get; set; }
     }
 }

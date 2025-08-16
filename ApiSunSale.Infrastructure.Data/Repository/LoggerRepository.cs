@@ -25,12 +25,12 @@ namespace ApiSunSale.Infrastructure.Data.Repository
 
         public async Task<IEnumerable<Main>> GetAllAsync(string[] include = null)
         {
-            return await GetAllAsync(s => 1 == 1, include, orderBy: "Created: Desc");
+            return await GetAllAsync(s => s.IsDeleted.Equals(0), include, orderBy: "Created: Desc");
         }
 
         public async Task<IEnumerable<Main>> GetAllAsync(string parentCode, string[] include = null)
         {
-            return await GetAllAsync(s => 1 == 1, include, orderBy: "Created: Desc");
+            return await GetAllAsync(s => s.IsDeleted.Equals(0), include, orderBy: "Created: Desc");
         }
 
         public async Task<Main> GetAsync(string code, string[] include = null)
@@ -52,9 +52,32 @@ namespace ApiSunSale.Infrastructure.Data.Repository
         {
             var query = GetQueryable();
 
+            if (!string.IsNullOrEmpty(isActive))
+            {
+                Regex regexObj = new Regex(@"[^\d]");
+
+                string isActiveString = regexObj.Replace(isActive, "");
+
+                int isActiveInt32 = 0;
+
+                if (!string.IsNullOrEmpty(isActiveString))
+                {
+                    isActiveInt32 = Convert.ToInt32(regexObj.Replace(isActive, ""));
+                }
+
+                if (isActiveInt32 > 1)
+                {
+                    isActiveInt32 = 1;
+                }
+
+                byte isActiveByte = Convert.ToByte(isActiveInt32);
+
+                query = query.Where(c => c.IsActive.Equals(isActiveByte));
+            }
+
             if (!string.IsNullOrEmpty(term))
             {
-                query = query.Where(c => c.Descricao.Contains(term));
+                query = query.Where(c => c.Id.Equals(term));
             }
 
             if (startDate != null)

@@ -3,34 +3,61 @@ using System.Reflection;
 
 namespace ApiSunSale.Domain.Entities
 {
-    public class Logger 
+    public class Logger : BaseEntity
     {
         public Logger()
         {
-            Created = DateTime.Now;
-            Updated = DateTime.Now;
         }
 
         public Logger(Exception ex)
             : this()
         {
-            Descricao = ex.Message;
+            Message = ex.Message;
             Stacktrace = ex.StackTrace.ToString();
+            Methodname = ex.TargetSite?.Name;
+            Classname = ex.TargetSite?.DeclaringType?.FullName;
+            Created = DateTime.Now;
+            Updated = DateTime.Now;
         }
 
         public Logger(string message, long personCode)
             : this()
         {
-            Descricao = message;
-            PersonCode = personCode;
+            Message = message;
+            Adminid = personCode;
         }
 
-        public int Id { get; set; }
-        public string Descricao { get; set; }
-        public int Tipo { get; set; }
+        public Logger(string message, string methodName = "", string className = "", int frame = 1)
+            : this()
+        {
+            Message = message;
+
+            if (methodName == null)
+            {
+                StackTrace stackTrace = new StackTrace();
+
+                Stacktrace = stackTrace.ToString();
+
+                StackFrame frameStack = stackTrace.GetFrame(frame); // Get the calling method frame
+
+                MethodBase method = frameStack?.GetMethod();
+
+                Methodname = method?.Name;
+                Classname = method?.DeclaringType?.Name;
+            }
+            else
+            {
+                Methodname = methodName;
+                Classname = className;
+            }
+        }
+        public long Id { get; set; }
+        public string Message { get; set; }
+        public long Adminid { get; set; }
+        public string Classname { get; set; }
+        public string Methodname { get; set; }
+        public string Methodsignature { get; set; }
+        public string Methodparameters { get; set; }
         public string Stacktrace { get; set; }
-        public long PersonCode { get; set; } 
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
     }
 }

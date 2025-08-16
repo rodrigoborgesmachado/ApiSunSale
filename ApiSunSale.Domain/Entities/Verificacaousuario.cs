@@ -1,9 +1,9 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Verificacaousuario 
+    public class Verificacaousuario : BaseEntity
     {
-        public int Codigo { get; set; }
-        public string Guidtext { get; set; }
-        public int Codigousuario { get; set; }
+        public long Id { get; set; }
+        public string Guid { get; set; }
+        public int Idusuario { get; set; }
     }
 }

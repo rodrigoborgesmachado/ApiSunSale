@@ -1,8 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Licencassunsalepro 
+    public class Licencassunsalepro : BaseEntity
     {
-        public int Codigo { get; set; }
+        public long Id { get; set; }
         public string Licenca { get; set; }
     }
 }

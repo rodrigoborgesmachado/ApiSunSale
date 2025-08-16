@@ -1,10 +1,9 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class AnexosquestoesDTO 
+    public class AnexosquestoesDTO : BaseDTO
     {
-        public long Codigo { get; set; }
-        public long Codigoquestao { get; set; }
-        public DateTime Dataregistro { get; set; }
-        public byte[] Anexo { get; set; }
+        public long Id { get; set; }
+        public long Idquestao { get; set; }
+        public string Link { get; set; }
     }
 }

@@ -10,9 +10,5 @@ CREATE TABLE [Logger](
 	[MethodName] [nvarchar](255) NULL,
 	[MethodSignature] [nvarchar](255) NULL,
 	[MethodParameters] [nvarchar](255) NULL,
-	[StackTrace] [nvarchar](max) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] 
+	[StackTrace] [nvarchar](max) NULL
+)

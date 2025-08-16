@@ -1,7 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class VeiculosfordevDTO 
+    public class VeiculosfordevDTO : BaseDTO
     {
+        public long Id { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Ano { get; set; }

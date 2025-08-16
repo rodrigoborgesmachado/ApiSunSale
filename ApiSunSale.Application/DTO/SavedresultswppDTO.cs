@@ -1,8 +1,9 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class SavedresultswppDTO 
+    public class SavedresultswppDTO : BaseDTO
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
+        public string Guid { get; set; }
         public string Json { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace ApiSunSale.Infrastructure.Data.Repository
 
         public async Task<Main> GetAsync(string code, string[] include = null)
         {
-            var query = GetQueryable().Where(p => p.Code.Equals(code));
+            var query = GetQueryable().Where(p => p.Id.Equals(code));
 
             if (include != null)
             {
@@ -67,7 +67,7 @@ namespace ApiSunSale.Infrastructure.Data.Repository
 
             if (!string.IsNullOrEmpty(term))
             {
-                query = query.Where(c => c.Code.Equals(term));
+                query = query.Where(c => c.Id.Equals(term));
             }
 
             if (startDate != null)

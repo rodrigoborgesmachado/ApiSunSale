@@ -1,6 +1,6 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class NotascortesisuViewModel 
+    public class NotascortesisuViewModel : BaseViewModel
     {
         public long Id { get; set; }
         public long Year { get; set; }

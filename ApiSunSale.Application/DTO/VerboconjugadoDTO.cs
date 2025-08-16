@@ -1,10 +1,9 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class VerboconjugadoDTO 
+    public class VerboconjugadoDTO : BaseDTO
     {
-        public long Codigo { get; set; }
-        public DateTime Datacriacao { get; set; }
-        public string Verbo { get; set; }
+        public long Id { get; set; }
+        public string Idverbo { get; set; }
         public string Presente { get; set; }
         public string Preteritoimperfeito { get; set; }
         public string Preteritoperfeito { get; set; }

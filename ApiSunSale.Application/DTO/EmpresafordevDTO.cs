@@ -1,7 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class EmpresafordevDTO 
+    public class EmpresafordevDTO : BaseDTO
     {
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Cnpj { get; set; }
         public string Ie { get; set; }

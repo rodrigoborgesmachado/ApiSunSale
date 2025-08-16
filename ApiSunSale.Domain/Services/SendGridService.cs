@@ -34,7 +34,7 @@ namespace ApiSunSale.Domain.Services
 
             if (!retorno)
             {
-                await _logger.InsertAsync($"Erro ao enviar email: {response.StatusCode}", entity.Codigo);
+                await _logger.InsertAsync($"Erro ao enviar email: {response.StatusCode}", entity.Id);
             }
 
             return retorno;

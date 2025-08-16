@@ -1,10 +1,14 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class LoggerDTO 
+    public class LoggerDTO : BaseDTO
     {
-        public int Id { get; set; }
-        public string Descricao { get; set; }
-        public int Tipo { get; set; }
+        public long Id { get; set; }
+        public string Message { get; set; }
+        public long Adminid { get; set; }
+        public string Classname { get; set; }
+        public string Methodname { get; set; }
+        public string Methodsignature { get; set; }
+        public string Methodparameters { get; set; }
         public string Stacktrace { get; set; }
     }
 }

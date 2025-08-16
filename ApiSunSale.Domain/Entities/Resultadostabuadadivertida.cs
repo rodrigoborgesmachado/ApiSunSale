@@ -1,8 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Resultadostabuadadivertida 
+    public class Resultadostabuadadivertida : BaseEntity
     {
-        public int Codigo { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public int Tempo { get; set; }
         public int Numeroacertos { get; set; }

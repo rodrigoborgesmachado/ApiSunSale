@@ -67,7 +67,7 @@ namespace ApiSunSale.Application.Services
         public async Task<MainDTO> UpdateAsync(MainDTO mainDto)
         {
             var main = mainDto.ProjectedAs<Main>();
-            
+            main.Updated = DateTime.UtcNow;
 
             _mainRepository.Update(main);
             await _mainRepository.CommitAsync();

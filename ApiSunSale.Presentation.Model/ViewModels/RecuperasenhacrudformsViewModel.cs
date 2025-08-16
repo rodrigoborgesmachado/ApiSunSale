@@ -1,10 +1,9 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class RecuperasenhacrudformsViewModel 
+    public class RecuperasenhacrudformsViewModel : BaseViewModel
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public string Guid { get; set; }
-        public string Email { get; set; }
-        public string Recuperado { get; set; }
+        public long Userid { get; set; }
     }
 }

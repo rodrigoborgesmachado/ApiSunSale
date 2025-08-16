@@ -1,6 +1,6 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class BiomasViewModel 
+    public class BiomasViewModel : BaseViewModel
     {
         public long Id { get; set; }
         public string Nome { get; set; }

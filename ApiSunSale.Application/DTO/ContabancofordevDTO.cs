@@ -1,7 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class ContabancofordevDTO 
+    public class ContabancofordevDTO : BaseDTO
     {
+        public long Id { get; set; }
         public string Contacorrente { get; set; }
         public string Agencia { get; set; }
         public string Banco { get; set; }

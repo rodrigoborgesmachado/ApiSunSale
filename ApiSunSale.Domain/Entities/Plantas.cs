@@ -1,6 +1,6 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Plantas 
+    public class Plantas : BaseEntity
     {
         public long Id { get; set; }
         public long Idbioma { get; set; }

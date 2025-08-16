@@ -1,10 +1,10 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Comentariosquestoes 
+    public class Comentariosquestoes : BaseEntity
     {
-        public int Codigo { get; set; }
+        public long Id { get; set; }
         public string Comentario { get; set; }
-        public int Codigousuario { get; set; }
-        public int Codigoquestao { get; set; }
+        public long Idusuario { get; set; }
+        public long Idquestao { get; set; }
     }
 }

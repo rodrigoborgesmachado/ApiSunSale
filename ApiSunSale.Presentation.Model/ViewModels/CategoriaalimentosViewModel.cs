@@ -1,8 +1,8 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class CategoriaalimentosViewModel 
+    public class CategoriaalimentosViewModel : BaseViewModel
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public string Descricao { get; set; }
     }
 }

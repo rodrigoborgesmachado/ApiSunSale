@@ -1,7 +1,8 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class VeiculosfordevViewModel 
+    public class VeiculosfordevViewModel : BaseViewModel
     {
+        public long Id { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Ano { get; set; }

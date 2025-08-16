@@ -1,11 +1,10 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class RespostasusuariosViewModel 
+    public class RespostasusuariosViewModel : BaseViewModel
     {
-        public long Codigo { get; set; }
-        public long Codigousuario { get; set; }
-        public long Codigoresposta { get; set; }
-        public DateTime Dataresposta { get; set; }
-        public long Codigoquestao { get; set; }
+        public long Id { get; set; }
+        public long Idusuario { get; set; }
+        public long Idresposta { get; set; }
+        public long Idquestao { get; set; }
     }
 }

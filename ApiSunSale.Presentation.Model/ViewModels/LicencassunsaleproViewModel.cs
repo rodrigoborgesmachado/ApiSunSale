@@ -1,8 +1,8 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class LicencassunsaleproViewModel 
+    public class LicencassunsaleproViewModel : BaseViewModel
     {
-        public int Codigo { get; set; }
+        public long Id { get; set; }
         public string Licenca { get; set; }
     }
 }

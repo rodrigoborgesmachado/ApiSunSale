@@ -1,10 +1,9 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class AcaousuarioDTO 
+    public class AcaousuarioDTO : BaseDTO
     {
-        public long Codigo { get; set; }
-        public long Codigousuario { get; set; }
+        public long Id { get; set; }
+        public long Idusuario { get; set; }
         public string Acao { get; set; }
-        public DateTime Dataregistro { get; set; }
     }
 }

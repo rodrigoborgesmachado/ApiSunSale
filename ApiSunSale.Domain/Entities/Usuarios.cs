@@ -1,6 +1,6 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Usuarios 
+    public class Usuarios : BaseEntity
     {
         public long Id { get; set; }
         public string Login { get; set; }

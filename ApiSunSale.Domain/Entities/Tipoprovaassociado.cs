@@ -1,9 +1,9 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Tipoprovaassociado 
+    public class Tipoprovaassociado : BaseEntity
     {
-        public int Codigo { get; set; }
-        public int Codigotipo { get; set; }
-        public int Codigoprova { get; set; }
+        public long Id { get; set; }
+        public int Idtipo { get; set; }
+        public int Idprova { get; set; }
     }
 }

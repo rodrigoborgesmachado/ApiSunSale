@@ -1,11 +1,12 @@
+using ApiSunSale.Infrastructure.CrossCutting.Mail;
 using MainDTO = ApiSunSale.Application.DTO.LoggerDTO;
 
 namespace ApiSunSale.Application.Interfaces
 {
     public interface ILoggerAppService : IDisposable
     {
-        Task<MainDTO> InsertAsync(string message);
         Task<MainDTO> InsertAsync(string message, long userId);
+        Task<MainDTO> InsertAsync(string message);
         Task<IEnumerable<MainDTO>> GetAllAsync(string? include = null);
 
         Task<MainDTO> GetAsync(string code, string? include = null);

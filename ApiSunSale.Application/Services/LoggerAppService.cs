@@ -1,5 +1,4 @@
 using IBlobStorageService = ApiSunSale.Domain.Interfaces.Services.IBlobStorageService;
-using ILoggerService = ApiSunSale.Application.Interfaces.ILoggerAppService;
 using IMainRepository = ApiSunSale.Domain.Interfaces.Repository.ILoggerRepository;
 using IMainService = ApiSunSale.Application.Interfaces.ILoggerAppService;
 using Main = ApiSunSale.Domain.Entities.Logger;
@@ -13,15 +12,22 @@ namespace ApiSunSale.Application.Services
     public class LoggerAppService : ServiceBase<MainDTO>, IMainService
     {
         private readonly IMainRepository _mainRepository;
-        private readonly ILoggerService _loggerService;
 
         private string[] allowInclude = new string[] { };
 
-        public LoggerAppService(IBlobStorageService blobStorageService, IOptions<Settings> options, IMainRepository mainRepository, ILoggerService loggerService)
+        public LoggerAppService(IBlobStorageService blobStorageService, IOptions<Settings> options, IMainRepository mainRepository)
             : base(blobStorageService, options)
         {
             _mainRepository = mainRepository;
-            _loggerService = loggerService;
+        }
+
+        public async Task<MainDTO> InsertAsync(Exception ex)
+        {
+            var main = new Main(ex);
+
+            _mainRepository.Add(main);
+            await _mainRepository.CommitAsync();
+            return main.ProjectedAs<MainDTO>();
         }
 
         public async Task<MainDTO> InsertAsync(string message)
@@ -36,7 +42,7 @@ namespace ApiSunSale.Application.Services
             _mainRepository.Add(main);
             await _mainRepository.CommitAsync();
 
-            return main.ProjectedAs<MainDTO>();
+            return main.ProjectedAs<MainDTO>(); ;
         }
 
         public async Task<IEnumerable<MainDTO>> GetAllAsync(string? include = null)
@@ -82,7 +88,7 @@ namespace ApiSunSale.Application.Services
         public async Task<MainDTO> UpdateAsync(MainDTO mainDto)
         {
             var main = mainDto.ProjectedAs<Main>();
-            
+            main.Updated = DateTime.UtcNow;
 
             _mainRepository.Update(main);
             await _mainRepository.CommitAsync();
@@ -102,12 +108,8 @@ namespace ApiSunSale.Application.Services
 
         public async Task<string> GetReport(DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null)
         {
-            await _loggerService.InsertAsync($"Report - Starting GetReport - {this.GetType().Name}");
-
             var result = await GetAllPagedAsync(1, int.MaxValue, startDate, endDate, isActive, term, orderBy: orderBy, include: include);
             string link = await UploadReport(result.Item3.ToList());
-
-            await _loggerService.InsertAsync($"Report - Finishing GetReport - {this.GetType().Name}");
             return link;
         }
 

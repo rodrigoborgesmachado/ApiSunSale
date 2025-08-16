@@ -1,10 +1,9 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Respostasquestoes 
+    public class Respostasquestoes : BaseEntity
     {
-        public long Codigo { get; set; }
-        public long Codigoquestao { get; set; }
-        public DateTime Dataregistro { get; set; }
+        public long Id { get; set; }
+        public long Idquestao { get; set; }
         public string Textoresposta { get; set; }
         public string Certa { get; set; }
         public string Observacaoresposta { get; set; }

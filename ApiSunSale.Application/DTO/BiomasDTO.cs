@@ -1,6 +1,6 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class BiomasDTO 
+    public class BiomasDTO : BaseDTO
     {
         public long Id { get; set; }
         public string Nome { get; set; }

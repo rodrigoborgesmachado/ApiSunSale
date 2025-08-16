@@ -1,8 +1,8 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class WhosthatpokemonresultViewModel 
+    public class WhosthatpokemonresultViewModel : BaseViewModel
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public int Tempo { get; set; }
         public int Acertos { get; set; }

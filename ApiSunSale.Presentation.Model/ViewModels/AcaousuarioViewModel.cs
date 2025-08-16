@@ -1,10 +1,9 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class AcaousuarioViewModel 
+    public class AcaousuarioViewModel : BaseViewModel
     {
-        public long Codigo { get; set; }
-        public long Codigousuario { get; set; }
+        public long Id { get; set; }
+        public long Idusuario { get; set; }
         public string Acao { get; set; }
-        public DateTime Dataregistro { get; set; }
     }
 }

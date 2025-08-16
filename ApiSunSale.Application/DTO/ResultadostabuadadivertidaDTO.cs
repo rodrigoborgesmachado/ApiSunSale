@@ -1,8 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class ResultadostabuadadivertidaDTO 
+    public class ResultadostabuadadivertidaDTO : BaseDTO
     {
-        public int Codigo { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public int Tempo { get; set; }
         public int Numeroacertos { get; set; }

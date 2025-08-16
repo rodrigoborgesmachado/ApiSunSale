@@ -1,10 +1,9 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class ImagensplantaViewModel 
+    public class ImagensplantaViewModel : BaseViewModel
     {
         public long Id { get; set; }
         public long Idplanta { get; set; }
-        public string Caminho { get; set; }
-        public long Idusuario { get; set; }
+        public string Link { get; set; }
     }
 }

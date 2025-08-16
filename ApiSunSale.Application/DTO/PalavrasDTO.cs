@@ -1,6 +1,6 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class PalavrasDTO 
+    public class PalavrasDTO : BaseDTO
     {
         public long Id { get; set; }
         public long Nivel { get; set; }

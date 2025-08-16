@@ -1,8 +1,8 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class TipopostagemViewModel 
+    public class TipopostagemViewModel : BaseViewModel
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Descricao { get; set; }
     }
 }

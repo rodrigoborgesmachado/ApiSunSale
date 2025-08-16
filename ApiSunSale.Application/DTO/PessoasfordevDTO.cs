@@ -1,7 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class PessoasfordevDTO 
+    public class PessoasfordevDTO : BaseDTO
     {
+        public long Id { get; set; }
         public string Nome { get; set; }
         public long Idade { get; set; }
         public string Cpf { get; set; }

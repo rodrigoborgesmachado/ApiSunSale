@@ -1,9 +1,9 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class TipoprovaassociadoViewModel 
+    public class TipoprovaassociadoViewModel : BaseViewModel
     {
-        public int Codigo { get; set; }
-        public int Codigotipo { get; set; }
-        public int Codigoprova { get; set; }
+        public long Id { get; set; }
+        public int Idtipo { get; set; }
+        public int Idprova { get; set; }
     }
 }

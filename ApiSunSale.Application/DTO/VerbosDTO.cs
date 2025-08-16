@@ -1,9 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class VerbosDTO 
+    public class VerbosDTO : BaseDTO
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public string Palavra { get; set; }
-        public DateTime Datainsercao { get; set; }
     }
 }

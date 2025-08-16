@@ -1,8 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Pesos 
+    public class Pesos : BaseEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Faculdade { get; set; }
         public string Curso { get; set; }
         public string Turno { get; set; }

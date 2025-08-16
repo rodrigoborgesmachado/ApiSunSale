@@ -1,6 +1,6 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class UsuariosDTO 
+    public class UsuariosDTO : BaseDTO
     {
         public long Id { get; set; }
         public string Login { get; set; }

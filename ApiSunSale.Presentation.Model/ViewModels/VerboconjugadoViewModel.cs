@@ -1,10 +1,9 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class VerboconjugadoViewModel 
+    public class VerboconjugadoViewModel : BaseViewModel
     {
-        public long Codigo { get; set; }
-        public DateTime Datacriacao { get; set; }
-        public string Verbo { get; set; }
+        public long Id { get; set; }
+        public string Idverbo { get; set; }
         public string Presente { get; set; }
         public string Preteritoimperfeito { get; set; }
         public string Preteritoperfeito { get; set; }

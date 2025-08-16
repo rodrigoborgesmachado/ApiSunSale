@@ -1,6 +1,6 @@
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
-    public class PlantasViewModel 
+    public class PlantasViewModel : BaseViewModel
     {
         public long Id { get; set; }
         public long Idbioma { get; set; }

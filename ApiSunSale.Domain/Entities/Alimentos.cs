@@ -1,8 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Alimentos 
+    public class Alimentos : BaseEntity
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public long Categoriacodigo { get; set; }
         public long Numeroalimento { get; set; }
         public string Descricao { get; set; }

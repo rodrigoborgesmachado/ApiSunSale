@@ -1,25 +1,44 @@
+using ApiSunSale.Presentation.Api.App_Start;
+using ApiSunSale.Presentation.Api.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+new Start(builder).Builder();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.Use(async (context, next) =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    if (context.Request.Path == "/")
+    {
+        context.Response.Redirect("/swagger/index.html");
+    }
+    else
+    {
+        await next();
+    }
+});
+
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{
+    options.EnablePersistAuthorization();
+    options.DefaultModelExpandDepth(-1);
+    options.DefaultModelsExpandDepth(-1);
+    options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+    options.EnableFilter();
+});
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.MapControllers();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.Run();

@@ -1,8 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class PesosDTO 
+    public class PesosDTO : BaseDTO
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Faculdade { get; set; }
         public string Curso { get; set; }
         public string Turno { get; set; }

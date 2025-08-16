@@ -1,6 +1,6 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class NotascortesisuDTO 
+    public class NotascortesisuDTO : BaseDTO
     {
         public long Id { get; set; }
         public long Year { get; set; }

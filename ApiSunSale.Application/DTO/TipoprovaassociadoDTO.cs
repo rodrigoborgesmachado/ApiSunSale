@@ -1,9 +1,9 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class TipoprovaassociadoDTO 
+    public class TipoprovaassociadoDTO : BaseDTO
     {
-        public int Codigo { get; set; }
-        public int Codigotipo { get; set; }
-        public int Codigoprova { get; set; }
+        public long Id { get; set; }
+        public int Idtipo { get; set; }
+        public int Idprova { get; set; }
     }
 }

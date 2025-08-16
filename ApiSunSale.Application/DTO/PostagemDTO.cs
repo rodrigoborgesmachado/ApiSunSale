@@ -1,8 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class PostagemDTO 
+    public class PostagemDTO : BaseDTO
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Descricao { get; set; }
         public string Descricaoen { get; set; }
         public int Tipopostagem { get; set; }

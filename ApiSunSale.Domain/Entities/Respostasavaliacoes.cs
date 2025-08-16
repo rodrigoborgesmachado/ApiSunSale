@@ -1,10 +1,8 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Respostasavaliacoes 
+    public class Respostasavaliacoes : BaseEntity
     {
         public long Id { get; set; }
-        public DateTime Createdon { get; set; }
-        public DateTime Updatedon { get; set; }
         public long Createdby { get; set; }
         public long Updatedby { get; set; }
         public long Idavaliacao { get; set; }

@@ -5,8 +5,8 @@ create table ComentariosQuestoes(
     [IsActive] [tinyint] NOT NULL DEFAULT 1,
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
 	[Comentario] varchar(MAX) not null,
-	[IdUsuario] int not null,
-	[IdQuestao] int not null,
+	[IdUsuario] [bigint] not null,
+	[IdQuestao] [bigint] not null,
     FOREIGN KEY ([IdUsuario]) REFERENCES [Usuarios]([Id]),
     FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
 );

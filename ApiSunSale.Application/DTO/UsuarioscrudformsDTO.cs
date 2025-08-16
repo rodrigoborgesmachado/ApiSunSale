@@ -1,8 +1,8 @@
 namespace ApiSunSale.Application.DTO
 {
-    public class UsuarioscrudformsDTO 
+    public class UsuarioscrudformsDTO : BaseDTO
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Administrador { get; set; }

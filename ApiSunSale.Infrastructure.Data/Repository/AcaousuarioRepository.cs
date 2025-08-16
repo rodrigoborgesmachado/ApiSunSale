@@ -15,17 +15,17 @@ namespace ApiSunSale.Infrastructure.Data.Repository
 
         public async Task<IEnumerable<Main>> GetAllAsync(string[] include = null)
         {
-            return await GetAllAsync(s => 1 == 1, include, orderBy: "Created: Desc");
+            return await GetAllAsync(s => s.IsDeleted.Equals(0), include, orderBy: "Created: Desc");
         }
 
         public async Task<IEnumerable<Main>> GetAllAsync(string parentCode, string[] include = null)
         {
-            return await GetAllAsync(s => 1 == 1, include, orderBy: "Created: Desc");
+            return await GetAllAsync(s => s.IsDeleted.Equals(0), include, orderBy: "Created: Desc");
         }
 
         public async Task<Main> GetAsync(string code, string[] include = null)
         {
-            var query = GetQueryable().Where(p => p.Codigo.Equals(code));
+            var query = GetQueryable().Where(p => p.Id.Equals(code));
 
             if (include != null)
             {
@@ -67,7 +67,7 @@ namespace ApiSunSale.Infrastructure.Data.Repository
 
             if (!string.IsNullOrEmpty(term))
             {
-                query = query.Where(c => c.Code.Equals(term));
+                query = query.Where(c => c.Id.Equals(term));
             }
 
             if (startDate != null)

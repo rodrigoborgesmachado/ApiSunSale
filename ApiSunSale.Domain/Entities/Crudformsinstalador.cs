@@ -1,10 +1,9 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Crudformsinstalador 
+    public class Crudformsinstalador : BaseEntity
     {
-        public long Codigo { get; set; }
+        public long Id { get; set; }
         public string Versao { get; set; }
         public string Diretorio { get; set; }
-        public string Ativo { get; set; }
     }
 }

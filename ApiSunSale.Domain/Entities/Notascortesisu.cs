@@ -1,6 +1,6 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Notascortesisu 
+    public class Notascortesisu : BaseEntity
     {
         public long Id { get; set; }
         public long Year { get; set; }

@@ -35,46 +35,29 @@ namespace ApiSunSale.Infrastructure.Data.Context
         public DbSet<Anexosquestoes> Anexosquestoes { get; set; }
         public DbSet<Avaliacao> Avaliacao { get; set; }
         public DbSet<Biomas> Biomas { get; set; }
-        public DbSet<Campos> Campos { get; set; }
         public DbSet<Cartaocreditodevtools> Cartaocreditodevtools { get; set; }
         public DbSet<Categoriaalimentos> Categoriaalimentos { get; set; }
-        public DbSet<Chavesjwt> Chavesjwt { get; set; }
-        public DbSet<Clientes> Clientes { get; set; }
-        public DbSet<Codigostable> Codigostable { get; set; }
         public DbSet<Comentariosquestoes> Comentariosquestoes { get; set; }
-        public DbSet<Configuracaoemail> Configuracaoemail { get; set; }
-        public DbSet<Consultas> Consultas { get; set; }
         public DbSet<Contabancofordev> Contabancofordev { get; set; }
         public DbSet<Crudformsinstalador> Crudformsinstalador { get; set; }
-        public DbSet<Despesas> Despesas { get; set; }
         public DbSet<Email> Email { get; set; }
-        public DbSet<Emailanexos> Emailanexos { get; set; }
-        public DbSet<Emailbackup> Emailbackup { get; set; }
         public DbSet<Empresafordev> Empresafordev { get; set; }
         public DbSet<Imagensbioma> Imagensbioma { get; set; }
         public DbSet<Imagensplanta> Imagensplanta { get; set; }
         public DbSet<Licencassunsalepro> Licencassunsalepro { get; set; }
-        public DbSet<Logg> Logg { get; set; }
         public DbSet<Logger> Logger { get; set; }
         public DbSet<Metas> Metas { get; set; }
-        public DbSet<Modulos> Modulos { get; set; }
         public DbSet<Notascortesisu> Notascortesisu { get; set; }
-        public DbSet<Oleosessenciais> Oleosessenciais { get; set; }
         public DbSet<Palavras> Palavras { get; set; }
-        public DbSet<Parametros> Parametros { get; set; }
         public DbSet<Pesos> Pesos { get; set; }
         public DbSet<Pessoasfordev> Pessoasfordev { get; set; }
         public DbSet<Plantas> Plantas { get; set; }
         public DbSet<Postagem> Postagem { get; set; }
-        public DbSet<Projeto> Projeto { get; set; }
         public DbSet<Prova> Prova { get; set; }
         public DbSet<Questoes> Questoes { get; set; }
         public DbSet<Questoesavaliacao> Questoesavaliacao { get; set; }
-        public DbSet<Receitas> Receitas { get; set; }
         public DbSet<Recuperasenha> Recuperasenha { get; set; }
-        public DbSet<Recuperasenhaconcursando> Recuperasenhaconcursando { get; set; }
         public DbSet<Recuperasenhacrudforms> Recuperasenhacrudforms { get; set; }
-        public DbSet<Relacao> Relacao { get; set; }
         public DbSet<Respostasavaliacoes> Respostasavaliacoes { get; set; }
         public DbSet<Respostasquestoes> Respostasquestoes { get; set; }
         public DbSet<Respostasusuarios> Respostasusuarios { get; set; }
@@ -82,26 +65,16 @@ namespace ApiSunSale.Infrastructure.Data.Context
         public DbSet<Resultadostabuadadivertida> Resultadostabuadadivertida { get; set; }
         public DbSet<Savedresultswpp> Savedresultswpp { get; set; }
         public DbSet<Simulados> Simulados { get; set; }
-        public DbSet<Tabela> Tabela { get; set; }
-        public DbSet<Tabelas> Tabelas { get; set; }
-        public DbSet<Tabelasmodulos> Tabelasmodulos { get; set; }
-        public DbSet<Temp1> Temp1 { get; set; }
-        public DbSet<Teste> Teste { get; set; }
-        public DbSet<Tipocampo> Tipocampo { get; set; }
         public DbSet<Tipoperfil> Tipoperfil { get; set; }
         public DbSet<Tipopostagem> Tipopostagem { get; set; }
         public DbSet<Tipoprova> Tipoprova { get; set; }
         public DbSet<Tipoprovaassociado> Tipoprovaassociado { get; set; }
-        public DbSet<Tiposuporte> Tiposuporte { get; set; }
-        public DbSet<Traducoes> Traducoes { get; set; }
-        public DbSet<Usuarioconcursando> Usuarioconcursando { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Usuarioscrudforms> Usuarioscrudforms { get; set; }
         public DbSet<Veiculosfordev> Veiculosfordev { get; set; }
         public DbSet<Verboconjugado> Verboconjugado { get; set; }
         public DbSet<Verbos> Verbos { get; set; }
         public DbSet<Verificacaousuario> Verificacaousuario { get; set; }
-        public DbSet<Versao> Versao { get; set; }
         public DbSet<Whosthatpokemonresult> Whosthatpokemonresult { get; set; }
 
         #endregion

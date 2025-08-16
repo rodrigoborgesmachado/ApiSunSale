@@ -1,8 +1,9 @@
 namespace ApiSunSale.Domain.Entities
 {
-    public class Savedresultswpp 
+    public class Savedresultswpp : BaseEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
+        public string Guid { get; set; }
         public string Json { get; set; }
     }
 }
