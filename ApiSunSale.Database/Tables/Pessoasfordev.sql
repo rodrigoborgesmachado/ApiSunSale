@@ -1,7 +1,12 @@
 CREATE TABLE [Pessoasfordev] (
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Nome] VARCHAR (2000) DEFAULT ('') NOT NULL,
     [Idade] [bigint]            DEFAULT ((0)) NOT NULL,
-    [Cpf] VARCHAR (12)   DEFAULT ('') NOT NULL,
+    [Cpf] VARCHAR (12)   DEFAULT ('') NOT NULL UNIQUE,
     [Rg] VARCHAR (12)   DEFAULT ('') NOT NULL,
     [Datanascimento] VARCHAR (10)   DEFAULT ('') NOT NULL,
     [Sexo] VARCHAR (20)   DEFAULT ('Masculino') NOT NULL,
@@ -21,6 +26,5 @@ CREATE TABLE [Pessoasfordev] (
     [Altura] VARCHAR (10)   DEFAULT ('') NOT NULL,
     [Peso] [bigint]            DEFAULT ((0)) NOT NULL,
     [Tiposanguineo] VARCHAR (3)    DEFAULT ('') NOT NULL,
-    [Corfavorita] VARCHAR (30)   DEFAULT ('') NOT NULL,
-    PRIMARY KEY CLUSTERED ([Cpf] ASC)
+    [Corfavorita] VARCHAR (30)   DEFAULT ('') NOT NULL
 );

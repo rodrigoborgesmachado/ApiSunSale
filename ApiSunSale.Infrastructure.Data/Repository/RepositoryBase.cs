@@ -4,7 +4,7 @@ using ApiSunSale.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Reflection;
-using CestasDeMaria.Infrastructure.Data.Context;
+using ApiSunSale.Infrastructure.Data.Context;
 
 namespace ApiSunSale.Infrastructure.Data.Repository
 {

@@ -1,9 +1,11 @@
 CREATE TABLE [Imagensbioma] (
-    [Id] [bigint] IDENTITY(1,1)           NOT NULL,
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+    [IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Idbioma] [bigint]           NOT NULL,
-    [Caminho] VARCHAR (300) NULL,
-    [Idusuario] [bigint]           NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
-    FOREIGN KEY ([Idbioma]) REFERENCES [BIOMAS] ([Id]),
-    FOREIGN KEY ([Idusuario]) REFERENCES [USUARIOS] ([Id])
+    [Link] VARCHAR (300) NULL,
+    
+    FOREIGN KEY ([Idbioma]) REFERENCES [BIOMAS] ([Id])
 );

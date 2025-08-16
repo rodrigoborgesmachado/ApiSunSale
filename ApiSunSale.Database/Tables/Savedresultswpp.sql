@@ -1,7 +1,9 @@
 create table SavedResultsWpp(
-	Id int identity(1000, 1) primary key,
-	Created datetime not null,
-	Updated datetime not null,
-	IsActive char(1) default '1' not null,
+	[Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+	[Guid] varchar(255) not null,
 	[Json] varchar(max) not null,
 )

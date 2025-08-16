@@ -1,6 +1,8 @@
 create table LicencasSunSalePro(
-	Codigo int primary key,
-	Licenca varchar(100) not null,
-	IsActive char(1) default '1' not null,
-	Created DateTime,
-	Updated DateTime)
+	[Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+    [IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+	Licenca varchar(255) not null
+)

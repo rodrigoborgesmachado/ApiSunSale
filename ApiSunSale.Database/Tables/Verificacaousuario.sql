@@ -1,8 +1,9 @@
 create table VerificacaoUsuario(
-	codigo int primary key,
-	GuidText varchar(64) not null,
-	CodigoUsuario int not null,
-	IsActive char(1) default '1',
-	Created DateTime,
-	Updated DateTime
+	[Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+	[Guid] varchar(64) not null,
+	[IdUsuario] int not null,
 );

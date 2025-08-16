@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
-using static CestasDeMaria.Infrastructure.CrossCutting.Enums.Enums;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
-namespace CestasDeMaria.Infrastructure.CrossCutting.Mail
+namespace ApiSunSale.Infrastructure.CrossCutting.Mail
 {
     public static class Mail
     {
@@ -43,7 +43,7 @@ namespace CestasDeMaria.Infrastructure.CrossCutting.Mail
                     throw new Exception("Type not found");
             }
 
-            string htmlTemplate = GetTemplate(string.Concat("CestasDeMaria.Infrastructure.CrossCutting.Template.", template, ".html"));
+            string htmlTemplate = GetTemplate(string.Concat("ApiSunSale.Infrastructure.CrossCutting.Template.", template, ".html"));
 
             int i = 0;
             foreach (var item in values)

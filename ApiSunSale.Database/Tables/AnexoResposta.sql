@@ -1,8 +1,10 @@
 CREATE TABLE [Anexoresposta] (
-    [Codigo] [bigint] IDENTITY(1,1)             NOT NULL,
-    [Codigoquestao] [bigint]             DEFAULT ((0)) NOT NULL,
-    [Dataregistro] DATETIME        DEFAULT ('') NOT NULL,
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+    [IdQuestao] [bigint]             DEFAULT ((0)) NOT NULL,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+    [IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Anexo] VARBINARY (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC),
-    FOREIGN KEY ([Codigoquestao]) REFERENCES [Questoes]([Codigo])
+    FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
 );

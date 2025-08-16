@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace CestasDeMaria.Infrastructure.Data.Helpers
+namespace ApiSunSale.Infrastructure.Data.Helpers
 {
     public static class QueryableExtensions
     {

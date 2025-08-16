@@ -1,10 +1,15 @@
 create table Simulados(
-	Codigo int primary key,
+	[Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
 	Respostas varchar(MAX) not null,
-	Created DateTime,
-	CodigoUsuario int not null,
-	CodigoProva int not null,
+	IdUsuario int not null,
+	IdProva int not null,
 	QuantidadeQuestoes int not null,
 	QuantidadeCertas int not null,
-	Tempo int not null
+	Tempo int not null,
+    FOREIGN KEY ([IdUsuario]) REFERENCES [Usuarios]([Id]),
+    FOREIGN KEY ([IdProva]) REFERENCES [Prova]([Id])
 )

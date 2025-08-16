@@ -33,7 +33,7 @@ CREATE TABLE [Biomas] (
     [Fitofisionomia] VARCHAR (8000) NULL,
     [Observacao] VARCHAR (8000) NULL,
     [Idusuario] [bigint]            NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
+    
     FOREIGN KEY ([Idusuario]) REFERENCES [USUARIOS] ([Id])
 );
 
@@ -50,7 +50,7 @@ CREATE TABLE [Plantas] (
     [Familia] VARCHAR (200)  NULL,
     [Tribo] VARCHAR (200)  NULL,
     [Idusuario] [bigint]            NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
+    
     FOREIGN KEY ([Idbioma]) REFERENCES [BIOMAS] ([Id]),
     FOREIGN KEY ([Idusuario]) REFERENCES [USUARIOS] ([Id])
 );
@@ -61,7 +61,7 @@ CREATE TABLE [Imagensbioma] (
     [Idbioma] [bigint]           NOT NULL,
     [Caminho] VARCHAR (300) NULL,
     [Idusuario] [bigint]           NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
+    
     FOREIGN KEY ([Idbioma]) REFERENCES [BIOMAS] ([Id]),
     FOREIGN KEY ([Idusuario]) REFERENCES [USUARIOS] ([Id])
 );
@@ -72,7 +72,7 @@ CREATE TABLE [Imagensplanta] (
     [Idplanta] [bigint]           NOT NULL,
     [Caminho] VARCHAR (300) NULL,
     [Idusuario] [bigint]           NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
+    
     FOREIGN KEY ([Idplanta]) REFERENCES [PLANTAS] ([Id]),
     FOREIGN KEY ([Idusuario]) REFERENCES [USUARIOS] ([Id])
 );
@@ -508,7 +508,7 @@ CREATE TABLE [Palavras] (
     [Id] [bigint] IDENTITY(1,1)           NOT NULL,
     [Nivel] [bigint]           NOT NULL,
     [Palavra] VARCHAR (100) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
+    
     UNIQUE NONCLUSTERED ([Palavra] ASC)
 );
 

@@ -1,3 +1,0 @@
-CREATE TABLE [Temp1] (
-    [Teste] VARBINARY (MAX) NULL
-);

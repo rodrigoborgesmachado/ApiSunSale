@@ -1,9 +1,13 @@
 CREATE TABLE [dbo].[Notascortesisu]
 (
-	[Id] BIGINT NOT NULL PRIMARY KEY,
+	[Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
 	[Year] [bigint] not null,
 	[Numeroedicao] char(1) not null,
-	[Codigoinstituicaoensino] [bigint] IDENTITY(1,1) not null,
+	[Codigoinstituicaoensino] [bigint] not null,
 	[Nomeinstituicao] varchar(500) not null,
 	[Siglainstituicao] varchar(255) not null,
 	[Organizacaoacademica] varchar(255) not null,

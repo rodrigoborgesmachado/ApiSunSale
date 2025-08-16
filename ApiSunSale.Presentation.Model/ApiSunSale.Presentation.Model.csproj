@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApiSunsale.Application\ApiSunsale.Application.csproj" />
+    <ProjectReference Include="..\ApiSunsale.Application\ApiSunsale.Application.csproj" />
+  </ItemGroup>
+
 </Project>

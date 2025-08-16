@@ -1,6 +1,11 @@
 CREATE TABLE [Empresafordev] (
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+    [IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Nome] VARCHAR (200) NULL,
-    [Cnpj] VARCHAR (15)  DEFAULT ('') NOT NULL,
+    [Cnpj] VARCHAR (15)  DEFAULT ('') NOT NULL UNIQUE,
     [Ie] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Dataabertura] VARCHAR (12)  DEFAULT ('') NOT NULL,
     [Site] VARCHAR (500) DEFAULT ('') NOT NULL,
@@ -12,6 +17,5 @@ CREATE TABLE [Empresafordev] (
     [Cidade] VARCHAR (500) DEFAULT ('') NOT NULL,
     [Estado] CHAR (3)      DEFAULT ('SP') NOT NULL,
     [Telefonefixo] VARCHAR (30)  DEFAULT ('') NOT NULL,
-    [Celular] VARCHAR (30)  DEFAULT ('') NOT NULL,
-    PRIMARY KEY CLUSTERED ([Cnpj] ASC)
+    [Celular] VARCHAR (30)  DEFAULT ('') NOT NULL
 );

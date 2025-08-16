@@ -1,6 +1,8 @@
 create table TipoPostagem(
-	id int primary key,
-	descricao varchar(255),
-	created datetime,
-	updated datetime
+	[Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+	descricao varchar(255)
 )

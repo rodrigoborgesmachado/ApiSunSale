@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CestasDeMaria.Domain\CestasDeMaria.Domain.csproj" />
-    <ProjectReference Include="..\CestasDeMaria.Domain\CestasDeMaria.Domain.csproj" />
-    <ProjectReference Include="..\CestasDeMaria.Infrastructure.CrossCutting\CestasDeMaria.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\ApiSunSale.Domain\ApiSunSale.Domain.csproj" />
+    <ProjectReference Include="..\ApiSunSale.Domain\ApiSunSale.Domain.csproj" />
+    <ProjectReference Include="..\ApiSunSale.Infrastructure.CrossCutting\ApiSunSale.Infrastructure.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

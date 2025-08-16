@@ -1,11 +1,13 @@
 CREATE TABLE [Respostasusuarios] (
-    [Codigo] [bigint] IDENTITY(1,1)      NOT NULL,
-    [Codigousuario] [bigint]      DEFAULT ((0)) NOT NULL,
-    [Codigoresposta] [bigint]      DEFAULT ((0)) NOT NULL,
-    [Dataresposta] DATETIME NOT NULL,
-    [Codigoquestao] [bigint],
-    PRIMARY KEY CLUSTERED ([Codigo] ASC),
-    FOREIGN KEY ([Codigousuario]) REFERENCES [Usuarios]([Id]),
-    FOREIGN KEY ([Codigoresposta]) REFERENCES [Respostasquestoes]([Codigo]),
-    FOREIGN KEY ([Codigoquestao]) REFERENCES [Questoes]([Codigo])
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+    [IsActive] [tinyint] NOT NULL DEFAULT 1,
+    [IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+    [IdUsuario] [bigint]      DEFAULT ((0)) NOT NULL,
+    [IdResposta] [bigint]      DEFAULT ((0)) NOT NULL,
+    [IdQuestao] [bigint],
+    FOREIGN KEY ([IdUsuario]) REFERENCES [Usuarios]([Id]),
+    FOREIGN KEY ([IdResposta]) REFERENCES [Respostasquestoes]([Id]),
+    FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
 );

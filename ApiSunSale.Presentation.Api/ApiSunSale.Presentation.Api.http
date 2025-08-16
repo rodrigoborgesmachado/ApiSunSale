@@ -1,0 +1,6 @@
+@ApiSunSale.Presentation.Api_HostAddress = http://localhost:5212
+
+GET {{ApiSunSale.Presentation.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

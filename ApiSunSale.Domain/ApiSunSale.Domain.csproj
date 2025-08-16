@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CestasDeMaria.Infrastructure.CrossCutting\CestasDeMaria.Infrastructure.CrossCutting.csproj" />
+    <ProjectReference Include="..\ApiSunSale.Infrastructure.CrossCutting\ApiSunSale.Infrastructure.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

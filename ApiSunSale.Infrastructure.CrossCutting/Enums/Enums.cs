@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace CestasDeMaria.Infrastructure.CrossCutting.Enums
+namespace ApiSunSale.Infrastructure.CrossCutting.Enums
 {
     public static class Enums
     {

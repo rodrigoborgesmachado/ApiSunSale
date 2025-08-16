@@ -1,9 +1,9 @@
 CREATE TABLE [Recuperasenhacrudforms] (
-    [Codigo] [bigint] IDENTITY(1,1)           NOT NULL,
-    [Created] DATETIME      NOT NULL,
-    [Guid] VARCHAR (64)  NULL,
-    [Email] VARCHAR (300) NULL,
-    [Recuperado] CHAR (1)      DEFAULT ('0') NOT NULL,
-    [Updated] DATETIME      NOT NULL,
-    PRIMARY KEY CLUSTERED ([Codigo] ASC)
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+	[Created] DATETIME NOT NULL DEFAULT GETDATE(),
+	[Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+	[IsActive] [tinyint] NOT NULL DEFAULT 1,
+	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+    [Guid] VARCHAR (255)  NULL,
+	[UserId] [bigint] NOT NULL
 );
