@@ -6,5 +6,8 @@ namespace ApiSunSale.Application.DTO
         public long Idusuario { get; set; }
         public long Idresposta { get; set; }
         public long Idquestao { get; set; }
+        public UsuariosDTO Usuario { get; set; }
+        public RespostasquestoesDTO Resposta { get; set; }
+        public QuestoesDTO Questao { get; set; }
     }
 }

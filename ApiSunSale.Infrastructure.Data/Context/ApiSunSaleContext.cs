@@ -103,6 +103,96 @@ namespace ApiSunSale.Infrastructure.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Prova>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasMany(e => e.Questoes)
+                      .WithOne(q => q.Prova)
+                      .HasForeignKey(q => q.Idprova);
+            });
+
+            modelBuilder.Entity<Questoes>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Prova)
+                      .WithMany(p => p.Questoes)
+                      .HasForeignKey(e => e.Idprova);
+            });
+
+            modelBuilder.Entity<Anexoresposta>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Anexosresposta)
+                      .HasForeignKey(e => e.Idquestao);
+            });
+
+            modelBuilder.Entity<Anexosquestoes>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Anexosquestoes)
+                      .HasForeignKey(e => e.Idquestao);
+            });
+
+            modelBuilder.Entity<Comentariosquestoes>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Usuario)
+                      .WithMany(u => u.Comentariosquestoes)
+                      .HasForeignKey(e => e.Idusuario);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Comentariosquestoes)
+                      .HasForeignKey(e => e.Idquestao);
+            });
+
+            modelBuilder.Entity<Respostasquestoes>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Respostasquestoes)
+                      .HasForeignKey(e => e.Idquestao);
+            });
+
+            modelBuilder.Entity<Respostasusuarios>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Usuario)
+                      .WithMany(u => u.Respostasusuarios)
+                      .HasForeignKey(e => e.Idusuario);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Respostasusuarios)
+                      .HasForeignKey(e => e.Idquestao);
+                entity.HasOne(e => e.Resposta)
+                      .WithMany(r => r.Respostasusuarios)
+                      .HasForeignKey(e => e.Idresposta);
+            });
+
+            modelBuilder.Entity<Respostasavaliacoes>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Avaliacao)
+                      .WithMany(a => a.Respostasavaliacoes)
+                      .HasForeignKey(e => e.Idavaliacao);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Respostasavaliacoes)
+                      .HasForeignKey(e => e.Idquestao);
+                entity.HasOne(e => e.Resposta)
+                      .WithMany(r => r.Respostasavaliacoes)
+                      .HasForeignKey(e => e.Idresposta);
+            });
+
+            modelBuilder.Entity<Questoesavaliacao>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Avaliacao)
+                      .WithMany(a => a.Questoesavaliacao)
+                      .HasForeignKey(e => e.Idavaliacao);
+                entity.HasOne(e => e.Questao)
+                      .WithMany(q => q.Questoesavaliacao)
+                      .HasForeignKey(e => e.Idquestao);
+            });
         }
 
         public void CreateDefaultData(object model)

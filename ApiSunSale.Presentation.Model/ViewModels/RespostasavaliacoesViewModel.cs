@@ -8,5 +8,8 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public long Idavaliacao { get; set; }
         public long Idquestao { get; set; }
         public long Idresposta { get; set; }
+        public AvaliacaoViewModel Avaliacao { get; set; }
+        public QuestoesViewModel Questao { get; set; }
+        public RespostasquestoesViewModel Resposta { get; set; }
     }
 }

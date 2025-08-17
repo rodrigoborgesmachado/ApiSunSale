@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class UsuariosViewModel : BaseViewModel
@@ -10,5 +13,8 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public DateTime Datanascimento { get; set; }
         public string Admin { get; set; }
         public string Instituicao { get; set; }
+
+        public IEnumerable<ComentariosquestoesViewModel> Comentariosquestoes { get; set; }
+        public IEnumerable<RespostasusuariosViewModel> Respostasusuarios { get; set; }
     }
 }

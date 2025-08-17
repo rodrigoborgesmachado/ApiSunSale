@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class AvaliacaoViewModel : BaseViewModel
@@ -7,5 +9,8 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public string Orientação { get; set; }
         public string Ispublic { get; set; }
         public string Key { get; set; }
+
+        public IEnumerable<QuestoesavaliacaoViewModel> Questoesavaliacao { get; set; }
+        public IEnumerable<RespostasavaliacoesViewModel> Respostasavaliacoes { get; set; }
     }
 }

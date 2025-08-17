@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace ApiSunSale.Application.DTO
 {
     public class ProvaDTO : BaseDTO
@@ -15,5 +18,6 @@ namespace ApiSunSale.Application.DTO
         public string Banca { get; set; }
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
+        public IEnumerable<QuestoesDTO> Questoes { get; set; }
     }
 }

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiSunSale.Domain.Entities
@@ -18,5 +20,7 @@ namespace ApiSunSale.Domain.Entities
         public string Banca { get; set; }
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
+
+        public IEnumerable<Questoes> Questoes { get; set; }
     }
 }
