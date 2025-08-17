@@ -6,5 +6,8 @@ namespace ApiSunSale.Domain.Entities
         public long Idavaliacao { get; set; }
         public long Idquestao { get; set; }
         public decimal Notaquestao { get; set; }
+
+        public Avaliacao Avaliacao { get; set; }
+        public Questoes Questao { get; set; }
     }
 }

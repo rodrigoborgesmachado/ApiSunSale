@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class ProvaViewModel : BaseViewModel
@@ -15,5 +18,6 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public string Banca { get; set; }
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
+        public IEnumerable<QuestoesViewModel> Questoes { get; set; }
     }
 }

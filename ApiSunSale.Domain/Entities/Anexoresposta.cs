@@ -5,5 +5,7 @@ namespace ApiSunSale.Domain.Entities
         public long Id { get; set; }
         public long Idquestao { get; set; }
         public byte[] Anexo { get; set; }
+
+        public Questoes Questao { get; set; }
     }
 }

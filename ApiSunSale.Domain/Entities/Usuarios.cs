@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace ApiSunSale.Domain.Entities
 {
     public class Usuarios : BaseEntity
@@ -10,5 +13,8 @@ namespace ApiSunSale.Domain.Entities
         public DateTime Datanascimento { get; set; }
         public string Admin { get; set; }
         public string Instituicao { get; set; }
+
+        public IEnumerable<Comentariosquestoes> Comentariosquestoes { get; set; }
+        public IEnumerable<Respostasusuarios> Respostasusuarios { get; set; }
     }
 }

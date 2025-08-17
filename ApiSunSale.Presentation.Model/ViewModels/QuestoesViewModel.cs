@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class QuestoesViewModel : BaseViewModel
@@ -11,5 +13,13 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
         public string Assunto { get; set; }
+        public ProvaViewModel Prova { get; set; }
+        public IEnumerable<AnexorespostaViewModel> Anexosresposta { get; set; }
+        public IEnumerable<AnexosquestoesViewModel> Anexosquestoes { get; set; }
+        public IEnumerable<ComentariosquestoesViewModel> Comentariosquestoes { get; set; }
+        public IEnumerable<RespostasquestoesViewModel> Respostasquestoes { get; set; }
+        public IEnumerable<RespostasusuariosViewModel> Respostasusuarios { get; set; }
+        public IEnumerable<RespostasavaliacoesViewModel> Respostasavaliacoes { get; set; }
+        public IEnumerable<QuestoesavaliacaoViewModel> Questoesavaliacao { get; set; }
     }
 }

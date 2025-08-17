@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ApiSunSale.Application.DTO
 {
     public class QuestoesDTO : BaseDTO
@@ -11,5 +13,13 @@ namespace ApiSunSale.Application.DTO
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
         public string Assunto { get; set; }
+        public ProvaDTO Prova { get; set; }
+        public IEnumerable<AnexorespostaDTO> Anexosresposta { get; set; }
+        public IEnumerable<AnexosquestoesDTO> Anexosquestoes { get; set; }
+        public IEnumerable<ComentariosquestoesDTO> Comentariosquestoes { get; set; }
+        public IEnumerable<RespostasquestoesDTO> Respostasquestoes { get; set; }
+        public IEnumerable<RespostasusuariosDTO> Respostasusuarios { get; set; }
+        public IEnumerable<RespostasavaliacoesDTO> Respostasavaliacoes { get; set; }
+        public IEnumerable<QuestoesavaliacaoDTO> Questoesavaliacao { get; set; }
     }
 }

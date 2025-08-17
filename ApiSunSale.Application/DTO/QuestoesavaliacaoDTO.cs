@@ -6,5 +6,7 @@ namespace ApiSunSale.Application.DTO
         public long Idavaliacao { get; set; }
         public long Idquestao { get; set; }
         public decimal Notaquestao { get; set; }
+        public AvaliacaoDTO Avaliacao { get; set; }
+        public QuestoesDTO Questao { get; set; }
     }
 }

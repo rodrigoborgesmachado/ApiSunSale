@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ApiSunSale.Domain.Entities
 {
     public class Avaliacao : BaseEntity
@@ -7,5 +9,8 @@ namespace ApiSunSale.Domain.Entities
         public string Orientação { get; set; }
         public string Ispublic { get; set; }
         public string Key { get; set; }
+
+        public IEnumerable<Questoesavaliacao> Questoesavaliacao { get; set; }
+        public IEnumerable<Respostasavaliacoes> Respostasavaliacoes { get; set; }
     }
 }

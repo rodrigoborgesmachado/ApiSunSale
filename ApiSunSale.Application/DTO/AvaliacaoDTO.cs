@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ApiSunSale.Application.DTO
 {
     public class AvaliacaoDTO : BaseDTO
@@ -7,5 +9,8 @@ namespace ApiSunSale.Application.DTO
         public string Orientação { get; set; }
         public string Ispublic { get; set; }
         public string Key { get; set; }
+
+        public IEnumerable<QuestoesavaliacaoDTO> Questoesavaliacao { get; set; }
+        public IEnumerable<RespostasavaliacoesDTO> Respostasavaliacoes { get; set; }
     }
 }

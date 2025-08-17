@@ -8,5 +8,8 @@ namespace ApiSunSale.Application.DTO
         public long Idavaliacao { get; set; }
         public long Idquestao { get; set; }
         public long Idresposta { get; set; }
+        public AvaliacaoDTO Avaliacao { get; set; }
+        public QuestoesDTO Questao { get; set; }
+        public RespostasquestoesDTO Resposta { get; set; }
     }
 }
