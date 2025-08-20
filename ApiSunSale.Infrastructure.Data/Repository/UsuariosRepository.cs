@@ -38,6 +38,21 @@ namespace ApiSunSale.Infrastructure.Data.Repository
             return await query.SingleOrDefaultAsync();
         }
 
+        public async Task<Main> GetByEmailAsync(string email, string[] include = null)
+        {
+            var query = GetQueryable().Where(p => p.Email.Equals(email));
+
+            if (include != null)
+            {
+                foreach (var toInclude in include)
+                {
+                    query = query.Include(toInclude);
+                }
+            }
+
+            return await query.FirstOrDefaultAsync();
+        }
+
         public async Task<Tuple<int, IEnumerable<Main>>> GetAllPagedAsync(int page, int quantity, DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string[] include = null)
         {
             var query = GetQueryable();

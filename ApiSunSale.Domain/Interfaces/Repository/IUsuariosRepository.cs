@@ -8,5 +8,6 @@ namespace ApiSunSale.Domain.Interfaces.Repository
         Task<IEnumerable<Main>> GetAllAsync(string parentCode, string[] include = null);
         Task<Main> GetAsync(string code, string[] include = null);
         Task<Tuple<int, IEnumerable<Main>>> GetAllPagedAsync(int page, int quantity, DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string[] include = null);
+        Task<Main> GetByEmailAsync(string email, string[] include = null);
     }
 }

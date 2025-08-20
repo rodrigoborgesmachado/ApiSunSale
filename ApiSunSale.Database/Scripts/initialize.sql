@@ -766,3 +766,29 @@ CREATE TABLE [Respostasusuarios] (
     FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
 );
 GO
+
+INSERT INTO [dbo].[Usuarios]
+           ([Created]
+           ,[Updated]
+           ,[IsActive]
+           ,[IsDeleted]
+           ,[Login]
+           ,[Pass]
+           ,[Nome]
+           ,[Email]
+           ,[Datanascimento]
+           ,[Admin]
+           ,[Instituicao])
+     VALUES
+           (getdate()
+           ,getdate()
+           ,1
+           ,0
+           ,'admin@admin.com'
+           ,'12345'
+           ,'Admin'
+           ,'admin@admin.com'
+           ,GETDATE()
+           ,'1'
+           ,'')
+GO

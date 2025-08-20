@@ -96,6 +96,12 @@ namespace ApiSunSale.Application.Services
             return link;
         }
 
+        public async Task<MainDTO> GetByEmailAsync(string email, string? include = null)
+        {
+            var result = await _mainRepository.GetByEmailAsync(email, IncludesMethods.GetIncludes(include, allowInclude));
+            return result.ProjectedAs<MainDTO>();
+        }
+
         public void Dispose()
         {
             _mainRepository.Dispose();
