@@ -35,7 +35,7 @@ namespace ApiSunSale.Infrastructure.Data.Repository
 
         public async Task<Main> GetAsync(string code, string[] include = null)
         {
-            var query = GetQueryable().Where(p => p.Id.Equals(code));
+            var query = GetQueryable().Where(p => p.Id.Equals(long.Parse(code)));
 
             if (include != null)
             {
