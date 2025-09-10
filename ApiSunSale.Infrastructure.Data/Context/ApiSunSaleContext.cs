@@ -193,6 +193,14 @@ namespace ApiSunSale.Infrastructure.Data.Context
                       .WithMany(q => q.Questoesavaliacao)
                       .HasForeignKey(e => e.Idquestao);
             });
+
+            modelBuilder.Entity<Acaousuario>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasOne(e => e.Usuario)
+                      .WithMany(a => a.Acoes)
+                      .HasForeignKey(e => e.Idusuario);
+            });
         }
 
         public void CreateDefaultData(object model)

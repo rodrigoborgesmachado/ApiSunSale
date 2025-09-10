@@ -16,5 +16,6 @@ namespace ApiSunSale.Domain.Entities
 
         public IEnumerable<Comentariosquestoes> Comentariosquestoes { get; set; }
         public IEnumerable<Respostasusuarios> Respostasusuarios { get; set; }
+        public IEnumerable<Acaousuario> Acoes { get; set; }
     }
 }

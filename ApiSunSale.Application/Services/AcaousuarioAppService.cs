@@ -15,7 +15,7 @@ namespace ApiSunSale.Application.Services
         private readonly IMainRepository _mainRepository;
         private readonly ILoggerService _loggerService;
 
-        private string[] allowInclude = new string[] { };
+        private string[] allowInclude = new string[] { "Usuario" };
 
         public AcaousuarioAppService(IBlobStorageService blobStorageService, IOptions<Settings> options, IMainRepository mainRepository, ILoggerService loggerService)
             : base(blobStorageService, options)

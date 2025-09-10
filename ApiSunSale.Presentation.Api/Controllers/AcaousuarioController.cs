@@ -124,7 +124,10 @@ namespace ApiSunSale.Presentation.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] MainViewModel model)
         {
+            var user = await tokenController.GetUserFromRequest();
             var mainDto = model.ProjectedAs<MainDTO>();
+            mainDto.Idusuario = user.id;
+
             var result = await _mainAppService.InsertAsync(mainDto);
 
             return Ok(result);

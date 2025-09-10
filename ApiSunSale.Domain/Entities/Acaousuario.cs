@@ -5,5 +5,6 @@ namespace ApiSunSale.Domain.Entities
         public long Id { get; set; }
         public long Idusuario { get; set; }
         public string Acao { get; set; }
+        public Usuarios Usuario { get; set; }
     }
 }
