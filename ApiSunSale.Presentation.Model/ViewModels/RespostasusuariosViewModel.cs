@@ -2,7 +2,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class RespostasusuariosViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public long Idusuario { get; set; }
         public long Idresposta { get; set; }
         public long Idquestao { get; set; }

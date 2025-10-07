@@ -2,7 +2,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class SimuladosViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public string Respostas { get; set; }
         public long Idusuario { get; set; }
         public long Idprova { get; set; }

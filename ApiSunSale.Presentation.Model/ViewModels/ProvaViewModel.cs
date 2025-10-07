@@ -5,7 +5,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class ProvaViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public string Nomeprova { get; set; }
         public string Local { get; set; }
         public string Tipoprova { get; set; }
@@ -18,6 +18,6 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public string Banca { get; set; }
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
-        public IEnumerable<QuestoesViewModel> Questoes { get; set; }
+        public IEnumerable<QuestoesViewModel>? Questoes { get; set; }
     }
 }

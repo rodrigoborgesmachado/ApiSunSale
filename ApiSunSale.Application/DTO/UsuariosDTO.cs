@@ -13,6 +13,7 @@ namespace ApiSunSale.Application.DTO
         public DateTime Datanascimento { get; set; }
         public string Admin { get; set; }
         public string Instituicao { get; set; }
+        public TipoperfilDTO TipoPerfil { get; set; }
 
         public IEnumerable<ComentariosquestoesDTO> Comentariosquestoes { get; set; }
         public IEnumerable<RespostasusuariosDTO> Respostasusuarios { get; set; }

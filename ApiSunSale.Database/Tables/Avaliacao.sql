@@ -8,5 +8,7 @@ CREATE TABLE [dbo].[Avaliacao]
     [Nome] NVARCHAR(255) not null,
     [Orientação] NVARCHAR(MAX),
     [Ispublic] char(1) default '1' not null,
-    [Key] nvarchar(64) 
+    [Key] nvarchar(64) ,
+    [Updatedby] [bigint],
+    [Createdby] [bigint]
 )

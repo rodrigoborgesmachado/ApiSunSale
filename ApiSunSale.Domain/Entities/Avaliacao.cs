@@ -9,6 +9,8 @@ namespace ApiSunSale.Domain.Entities
         public string Orientação { get; set; }
         public string Ispublic { get; set; }
         public string Key { get; set; }
+        public long CreatedBy { get; set; }
+        public long UpdatedBy { get; set; }
 
         public IEnumerable<Questoesavaliacao> Questoesavaliacao { get; set; }
         public IEnumerable<Respostasavaliacoes> Respostasavaliacoes { get; set; }

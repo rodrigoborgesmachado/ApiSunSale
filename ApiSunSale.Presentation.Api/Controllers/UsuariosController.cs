@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IUsuariosAppService;
 using MainDTO = ApiSunSale.Application.DTO.UsuariosDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.UsuariosViewModel;
+using ApiSunSale.Presentation.Model.Requests;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {
@@ -122,8 +123,16 @@ namespace ApiSunSale.Presentation.Api.Controllers
 		/// <param name="model"></param>
 		/// <returns><![CDATA[Task<IActionResult>]]></returns>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] MainViewModel model)
+        [AllowAnonymous]
+        public async Task<IActionResult> Post([FromBody] UserRequest model)
         {
+            var exists = await _mainAppService.GetByEmailAsync(model.Email);
+
+            if(exists != null)
+            {
+                return Ok(exists.ProjectedAs<MainDTO>());
+            }
+
             var mainDto = model.ProjectedAs<MainDTO>();
             var result = await _mainAppService.InsertAsync(mainDto);
 

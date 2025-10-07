@@ -5,6 +5,8 @@
         public string UserAdmin { get; set; }
         public string AdminPass { get; set; }
         public string SendGridApiKey { get; set; }
+        public string MailjetApiKey { get; set; }
+        public string MailjetSecretKey { get; set; }
         public string EmailCredential { get; set; }
         public string S3AccessKey { get; set; }
         public string S3SecretKey { get; set; }

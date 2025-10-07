@@ -1,6 +1,7 @@
 using IBlobStorageService = ApiSunSale.Domain.Interfaces.Services.IBlobStorageService;
 using ILoggerService = ApiSunSale.Application.Interfaces.ILoggerAppService;
 using IMainRepository = ApiSunSale.Domain.Interfaces.Repository.IEmailRepository;
+using IEmailService = ApiSunSale.Domain.Interfaces.Services.IEmailService;
 using IMainService = ApiSunSale.Application.Interfaces.IEmailAppService;
 using Main = ApiSunSale.Domain.Entities.Email;
 using MainDTO = ApiSunSale.Application.DTO.EmailDTO;
@@ -14,14 +15,16 @@ namespace ApiSunSale.Application.Services
     {
         private readonly IMainRepository _mainRepository;
         private readonly ILoggerService _loggerService;
+        private readonly IEmailService _emailService;
 
         private string[] allowInclude = new string[] { };
 
-        public EmailAppService(IBlobStorageService blobStorageService, IOptions<Settings> options, IMainRepository mainRepository, ILoggerService loggerService)
+        public EmailAppService(IBlobStorageService blobStorageService, IOptions<Settings> options, IMainRepository mainRepository, ILoggerService loggerService, IEmailService emailService)
             : base(blobStorageService, options)
         {
             _mainRepository = mainRepository;
             _loggerService = loggerService;
+            _emailService = emailService;
         }
 
         public async Task<IEnumerable<MainDTO>> GetAllAsync(string? include = null)
@@ -58,8 +61,10 @@ namespace ApiSunSale.Application.Services
         {
             var main = mainDto.ProjectedAs<Main>();
 
+            //var emailSent = await _emailService.SendMail(main);
             _mainRepository.Add(main);
             await _mainRepository.CommitAsync();
+
 
             return main.ProjectedAs<MainDTO>();
         }

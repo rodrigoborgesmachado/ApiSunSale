@@ -121,6 +121,7 @@ namespace ApiSunSale.Presentation.Api.Controllers
 		/// </summary>
 		/// <param name="model"></param>
 		/// <returns><![CDATA[Task<IActionResult>]]></returns>
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] MainViewModel model)
         {

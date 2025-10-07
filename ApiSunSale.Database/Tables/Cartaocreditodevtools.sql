@@ -6,5 +6,6 @@ CREATE TABLE [Cartaocreditodevtools] (
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Numerocartao] VARCHAR (100) DEFAULT ('') NOT NULL UNIQUE,
     [Datavalidade] VARCHAR (50)  DEFAULT ('') NOT NULL,
+    [Brand] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Codigoseguranca] CHAR (3)      DEFAULT ('') NOT NULL
 );

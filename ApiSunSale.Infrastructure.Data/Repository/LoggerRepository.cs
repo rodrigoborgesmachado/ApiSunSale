@@ -13,6 +13,14 @@ namespace ApiSunSale.Infrastructure.Data.Repository
         {
         }
 
+        public async Task<Main> InsertAsync(Exception ex)
+        {
+            return await InsertAsync(ex.ToString(), 0);
+        }
+        public async Task<Main> InsertAsync(Exception ex, long userId)
+        {
+            return await InsertAsync(ex.ToString(), userId);
+        }
         public async Task<Main> InsertAsync(string message, long userId)
         {
             var main = new Main(message, userId);

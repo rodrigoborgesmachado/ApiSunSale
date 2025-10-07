@@ -15,7 +15,6 @@ namespace ApiSunSale.Domain.Entities
         public string Assunto { get; set; }
 
         public Prova Prova { get; set; }
-        public IEnumerable<Anexoresposta> Anexosresposta { get; set; }
         public IEnumerable<Anexosquestoes> Anexosquestoes { get; set; }
         public IEnumerable<Comentariosquestoes> Comentariosquestoes { get; set; }
         public IEnumerable<Respostasquestoes> Respostasquestoes { get; set; }

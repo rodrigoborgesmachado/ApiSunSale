@@ -8,7 +8,7 @@ using Main = ApiSunSale.Domain.Entities.Email;
 
 namespace ApiSunSale.Domain.Services
 {
-    public class SendGridService : ISendGridService
+    public class SendGridService : IEmailService
     {
         private readonly Settings _settings;
         private readonly Logger _logger;

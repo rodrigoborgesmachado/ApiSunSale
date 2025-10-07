@@ -14,7 +14,6 @@ namespace ApiSunSale.Application.DTO
         public long Createdby { get; set; }
         public string Assunto { get; set; }
         public ProvaDTO Prova { get; set; }
-        public IEnumerable<AnexorespostaDTO> Anexosresposta { get; set; }
         public IEnumerable<AnexosquestoesDTO> Anexosquestoes { get; set; }
         public IEnumerable<ComentariosquestoesDTO> Comentariosquestoes { get; set; }
         public IEnumerable<RespostasquestoesDTO> Respostasquestoes { get; set; }

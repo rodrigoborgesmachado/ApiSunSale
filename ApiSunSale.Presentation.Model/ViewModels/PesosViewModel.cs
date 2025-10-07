@@ -2,7 +2,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class PesosViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public string Faculdade { get; set; }
         public string Curso { get; set; }
         public string Turno { get; set; }

@@ -6,5 +6,6 @@ namespace ApiSunSale.Domain.Entities
         public string Numerocartao { get; set; }
         public string Datavalidade { get; set; }
         public string Codigoseguranca { get; set; }
+        public string Brand { get; set; }
     }
 }

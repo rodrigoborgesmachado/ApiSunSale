@@ -101,6 +101,7 @@ CREATE TABLE [Cartaocreditodevtools] (
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
     [Numerocartao] VARCHAR (100) DEFAULT ('') NOT NULL UNIQUE,
     [Datavalidade] VARCHAR (50)  DEFAULT ('') NOT NULL,
+    [Brand] VARCHAR (50)  DEFAULT ('') NOT NULL,
     [Codigoseguranca] CHAR (3)      DEFAULT ('') NOT NULL
 );
 GO
@@ -303,7 +304,9 @@ CREATE TABLE [dbo].[Avaliacao]
     [Nome] NVARCHAR(255) not null,
     [Orientação] NVARCHAR(MAX),
     [Ispublic] char(1) default '1' not null,
-    [Key] nvarchar(64) 
+    [Key] nvarchar(64) ,
+    [Updatedby] [bigint],
+    [Createdby] [bigint]
 )
 GO
 
@@ -501,16 +504,32 @@ CREATE TABLE [Logger](
 	)
 GO
 
+
+-- START Respostasquestoes.sql
+CREATE TABLE [Respostasquestoes] (
+    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
+    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
+    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
+    [IsActive] [tinyint] NOT NULL DEFAULT 1,
+    [IsDeleted] [tinyint] NOT NULL DEFAULT 0,
+    [IdQuestao] [bigint]            DEFAULT ((0)) NOT NULL,
+    [Textoresposta] VARCHAR (8000) DEFAULT ('') NOT NULL,
+    [Certa] CHAR (1)       DEFAULT ('0') NOT NULL,
+    [Observacaoresposta] VARCHAR (8000) NULL,
+    FOREIGN KEY ([IdQuestao]) REFERENCES Questoes(Id)
+);
+GO
+
 -- START AnexoResposta.sql
 CREATE TABLE [Anexoresposta] (
     [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
-    [IdQuestao] [bigint]             DEFAULT ((0)) NOT NULL,
+    [IdResposta] [bigint]             DEFAULT ((0)) NOT NULL,
     [Created] DATETIME NOT NULL DEFAULT GETDATE(),
     [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
     [IsActive] [tinyint] NOT NULL DEFAULT 1,
 	[IsDeleted] [tinyint] NOT NULL DEFAULT 0,
-    [Anexo] VARBINARY (MAX) NOT NULL,
-    FOREIGN KEY ([IdQuestao]) REFERENCES [Questoes]([Id])
+    [Link] VARCHAR (255) NOT NULL,
+    FOREIGN KEY ([IdResposta]) REFERENCES [Respostasquestoes]([Id])
 );
 GO
 
@@ -694,21 +713,6 @@ CREATE TABLE [dbo].[Resultadostabuadadivertida]
 	Tipo char(1),
 	NumeroQuestoes int
 )
-GO
-
--- START Respostasquestoes.sql
-CREATE TABLE [Respostasquestoes] (
-    [Id] [bigint] IDENTITY(1,1)             NOT NULL PRIMARY KEY,
-    [Created] DATETIME NOT NULL DEFAULT GETDATE(),
-    [Updated] DATETIME NOT NULL DEFAULT GETDATE(),
-    [IsActive] [tinyint] NOT NULL DEFAULT 1,
-    [IsDeleted] [tinyint] NOT NULL DEFAULT 0,
-    [IdQuestao] [bigint]            DEFAULT ((0)) NOT NULL,
-    [Textoresposta] VARCHAR (8000) DEFAULT ('') NOT NULL,
-    [Certa] CHAR (1)       DEFAULT ('0') NOT NULL,
-    [Observacaoresposta] VARCHAR (8000) NULL,
-    FOREIGN KEY ([IdQuestao]) REFERENCES Questoes(Id)
-);
 GO
 
 -- START Tipopostagem.sql

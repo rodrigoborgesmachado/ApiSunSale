@@ -64,7 +64,7 @@ namespace ApiSunSale.Presentation.Api.Controllers
                 new Claim("Email", result.Email),
                 new Claim("Name", result.Nome),
                 new Claim("UserName", result.Email),
-                new Claim("IsAdmin", result.Admin)
+                new Claim("IsAdmin", result.Admin.ToString())
             };
 
             Token token = _tokenHandler.CreateToken(claims, _builder);

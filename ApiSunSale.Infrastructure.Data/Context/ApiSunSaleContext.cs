@@ -123,9 +123,9 @@ namespace ApiSunSale.Infrastructure.Data.Context
             modelBuilder.Entity<Anexoresposta>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.HasOne(e => e.Questao)
+                entity.HasOne(e => e.Respostasquestoes)
                       .WithMany(q => q.Anexosresposta)
-                      .HasForeignKey(e => e.Idquestao);
+                      .HasForeignKey(e => e.Idresposta);
             });
 
             modelBuilder.Entity<Anexosquestoes>(entity =>
@@ -200,6 +200,20 @@ namespace ApiSunSale.Infrastructure.Data.Context
                 entity.HasOne(e => e.Usuario)
                       .WithMany(a => a.Acoes)
                       .HasForeignKey(e => e.Idusuario);
+            });
+
+            modelBuilder.Entity<Usuarios>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.HasMany(e => e.Comentariosquestoes)
+                      .WithOne(c => c.Usuario)
+                      .HasForeignKey(c => c.Idusuario);
+                entity.HasMany(e => e.Respostasusuarios)
+                      .WithOne(r => r.Usuario)
+                      .HasForeignKey(r => r.Idusuario);
+                entity.HasMany(e => e.Acoes)
+                      .WithOne(a => a.Usuario)
+                      .HasForeignKey(a => a.Idusuario);
             });
         }
 

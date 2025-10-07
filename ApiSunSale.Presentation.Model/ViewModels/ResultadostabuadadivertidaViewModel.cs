@@ -2,7 +2,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class ResultadostabuadadivertidaViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public string Nome { get; set; }
         public int Tempo { get; set; }
         public int Numeroacertos { get; set; }

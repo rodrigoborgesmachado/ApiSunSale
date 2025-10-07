@@ -4,7 +4,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class QuestoesViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public string Campoquestao { get; set; }
         public string Observacaoquestao { get; set; }
         public string Materia { get; set; }
@@ -12,14 +12,13 @@ namespace ApiSunSale.Presentation.Model.ViewModels
         public string Numeroquestao { get; set; }
         public long Updatedby { get; set; }
         public long Createdby { get; set; }
-        public string Assunto { get; set; }
-        public ProvaViewModel Prova { get; set; }
-        public IEnumerable<AnexorespostaViewModel> Anexosresposta { get; set; }
-        public IEnumerable<AnexosquestoesViewModel> Anexosquestoes { get; set; }
-        public IEnumerable<ComentariosquestoesViewModel> Comentariosquestoes { get; set; }
-        public IEnumerable<RespostasquestoesViewModel> Respostasquestoes { get; set; }
-        public IEnumerable<RespostasusuariosViewModel> Respostasusuarios { get; set; }
-        public IEnumerable<RespostasavaliacoesViewModel> Respostasavaliacoes { get; set; }
-        public IEnumerable<QuestoesavaliacaoViewModel> Questoesavaliacao { get; set; }
+        public string? Assunto { get; set; }
+        public ProvaViewModel? Prova { get; set; }
+        public IEnumerable<AnexosquestoesViewModel>? Anexosquestoes { get; set; }
+        public IEnumerable<ComentariosquestoesViewModel>? Comentariosquestoes { get; set; }
+        public IEnumerable<RespostasquestoesViewModel>? Respostasquestoes { get; set; }
+        public IEnumerable<RespostasusuariosViewModel>? Respostasusuarios { get; set; }
+        public IEnumerable<RespostasavaliacoesViewModel>? Respostasavaliacoes { get; set; }
+        public IEnumerable<QuestoesavaliacaoViewModel>? Questoesavaliacao { get; set; }
     }
 }

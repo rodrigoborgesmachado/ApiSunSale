@@ -2,9 +2,8 @@ namespace ApiSunSale.Application.DTO
 {
     public class AnexorespostaDTO : BaseDTO
     {
-        public long Id { get; set; }
-        public long Idquestao { get; set; }
-        public byte[] Anexo { get; set; }
-        public QuestoesDTO Questao { get; set; }
+        public long Idresposta { get; set; }
+        public string Link { get; set; }
+        public RespostasquestoesDTO? Respostasquestoes { get; set; }
     }
 }

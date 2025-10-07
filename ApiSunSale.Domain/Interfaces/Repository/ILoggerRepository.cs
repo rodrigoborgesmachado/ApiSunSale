@@ -4,6 +4,8 @@ namespace ApiSunSale.Domain.Interfaces.Repository
 {
     public interface ILoggerRepository : IRepositoryBase<Main>
     {
+        Task<Main> InsertAsync(Exception ex);
+        Task<Main> InsertAsync(Exception ex, long userId);
         Task<Main> InsertAsync(string message, long userId);
         Task<IEnumerable<Main>> GetAllAsync(string[] include = null);
         Task<IEnumerable<Main>> GetAllAsync(string parentCode, string[] include = null);

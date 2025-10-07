@@ -38,7 +38,7 @@ namespace ApiSunSale.Infrastructure.CrossCutting.IoC
             #region Sevice
 
             RegisterService<IBlobStorageService, BlobAzureStorageService>(services);
-            RegisterService<ISendGridService, SendGridService>(services);
+            RegisterService<IEmailService, MailJetService>(services);
 
             #endregion
 

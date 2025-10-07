@@ -2,7 +2,7 @@ namespace ApiSunSale.Presentation.Model.ViewModels
 {
     public class UsuarioscrudformsViewModel : BaseViewModel
     {
-        public long Id { get; set; }
+        
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Administrador { get; set; }
