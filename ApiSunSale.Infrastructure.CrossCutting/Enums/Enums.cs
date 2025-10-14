@@ -5,6 +5,12 @@ namespace ApiSunSale.Infrastructure.CrossCutting.Enums
 {
     public static class Enums
     {
+        public enum Status
+        {
+            IsActive,
+            IsDeleted
+        }
+
         public enum Profile
         {
             Administrative,

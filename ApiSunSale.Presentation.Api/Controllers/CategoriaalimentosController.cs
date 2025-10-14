@@ -1,10 +1,11 @@
-using ApiSunSale.Presentation.Api.Handler;
 using ApiSunSale.Application.Helpers;
 using ApiSunSale.Domain.ModelClasses;
+using ApiSunSale.Presentation.Api.Handler;
 using ApiSunSale.Presentation.Model.Returns;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using IMainAppService = ApiSunSale.Application.Interfaces.ICategoriaalimentosAppService;
 using MainDTO = ApiSunSale.Application.DTO.CategoriaalimentosDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.CategoriaalimentosViewModel;
@@ -154,6 +155,19 @@ namespace ApiSunSale.Presentation.Api.Controllers
         {
             var mainDto = model.ProjectedAs<MainDTO>();
             var result = await _mainAppService.RemoveAsync(mainDto);
+
+            return Ok(result);
+        }
+
+        /// <summary>
+		/// Update
+		/// </summary>
+		/// <param name="model"></param>
+		/// <returns><![CDATA[Task<IActionResult>]]></returns>
+        [HttpPut("UpdateStatus")]
+        public async Task<IActionResult> UpdateStatus(Status status, long id)
+        {
+            var result = await _mainAppService.UpdateStatus(status, id);
 
             return Ok(result);
         }

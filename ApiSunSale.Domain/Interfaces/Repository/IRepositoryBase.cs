@@ -10,6 +10,7 @@ namespace ApiSunSale.Domain.Interfaces.Repository
         IQueryable<TEntity> GetQueryable();
 
         Task<TEntity> GetByIdAsync(int id);
+        Task<TEntity> GetByIdAsync(long id);
 
         Task<TEntity> GetByCodeAsync(string code);
         TEntity GetById(string code);

@@ -1,12 +1,13 @@
+using ApiSunSale.Application.Helpers;
+using ApiSunSale.Domain.ModelClasses;
+using Microsoft.Extensions.Options;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using IBlobStorageService = ApiSunSale.Domain.Interfaces.Services.IBlobStorageService;
 using ILoggerService = ApiSunSale.Application.Interfaces.ILoggerAppService;
 using IMainRepository = ApiSunSale.Domain.Interfaces.Repository.ICartaocreditodevtoolsRepository;
 using IMainService = ApiSunSale.Application.Interfaces.ICartaocreditodevtoolsAppService;
 using Main = ApiSunSale.Domain.Entities.Cartaocreditodevtools;
 using MainDTO = ApiSunSale.Application.DTO.CartaocreditodevtoolsDTO;
-using Microsoft.Extensions.Options;
-using ApiSunSale.Domain.ModelClasses;
-using ApiSunSale.Application.Helpers;
 
 namespace ApiSunSale.Application.Services
 {
@@ -40,6 +41,22 @@ namespace ApiSunSale.Application.Services
         {
             var result = await _mainRepository.GetAsync(code, IncludesMethods.GetIncludes(include, allowInclude));
             return result.ProjectedAs<MainDTO>();
+        }
+
+        public async Task<MainDTO> UpdateStatus(Status status, long id)
+        {
+            var main = await _mainRepository.GetByIdAsync(id);
+            
+            if (main == null)
+                throw new Exception("Object not found");
+            
+            main.IsActive = (byte)(status == Status.IsActive ? 1 : 0);
+            main.IsDeleted = (byte)(status == Status.IsDeleted ? 1 : 0);
+            _mainRepository.Update(main);
+
+            await _mainRepository.CommitAsync();
+
+            return main.ProjectedAs<MainDTO>();
         }
 
         public async Task<Tuple<int, int, IEnumerable<MainDTO>>> GetAllPagedAsync(int page, int quantity, DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null)

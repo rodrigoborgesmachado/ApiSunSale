@@ -81,6 +81,11 @@ namespace ApiSunSale.Infrastructure.Data.Repository
             return await _currentContext.Set<TEntity>().FindAsync(id);
         }
 
+        public async Task<TEntity> GetByIdAsync(long id)
+        {
+            return await _currentContext.Set<TEntity>().FindAsync(id);
+        }
+
         public async Task<TEntity> GetByCodeAsync(string code)
         {
             return await _currentContext.Set<TEntity>().FindAsync(code);

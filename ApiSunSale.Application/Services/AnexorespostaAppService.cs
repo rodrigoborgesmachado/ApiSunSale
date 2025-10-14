@@ -1,12 +1,13 @@
+using ApiSunSale.Application.Helpers;
+using ApiSunSale.Domain.ModelClasses;
+using Microsoft.Extensions.Options;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using IBlobStorageService = ApiSunSale.Domain.Interfaces.Services.IBlobStorageService;
 using ILoggerService = ApiSunSale.Application.Interfaces.ILoggerAppService;
 using IMainRepository = ApiSunSale.Domain.Interfaces.Repository.IAnexorespostaRepository;
 using IMainService = ApiSunSale.Application.Interfaces.IAnexorespostaAppService;
 using Main = ApiSunSale.Domain.Entities.Anexoresposta;
 using MainDTO = ApiSunSale.Application.DTO.AnexorespostaDTO;
-using Microsoft.Extensions.Options;
-using ApiSunSale.Domain.ModelClasses;
-using ApiSunSale.Application.Helpers;
 
 namespace ApiSunSale.Application.Services
 {
@@ -94,6 +95,22 @@ namespace ApiSunSale.Application.Services
 
             await _loggerService.InsertAsync($"Report - Finishing GetReport - {this.GetType().Name}");
             return link;
+        }
+
+        public async Task<MainDTO> UpdateStatus(Status status, long id)
+        {
+            var main = await _mainRepository.GetByIdAsync(id);
+
+            if (main == null)
+                throw new Exception("Object not found");
+
+            main.IsActive = (byte)(status == Status.IsActive ? 1 : 0);
+            main.IsDeleted = (byte)(status == Status.IsDeleted ? 1 : 0);
+            _mainRepository.Update(main);
+
+            await _mainRepository.CommitAsync();
+
+            return main.ProjectedAs<MainDTO>();
         }
 
         public void Dispose()
