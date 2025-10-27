@@ -168,6 +168,19 @@ namespace ApiSunSale.Presentation.Api.Controllers
         }
 
         /// <summary>
+        /// Update
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns><![CDATA[Task<IActionResult>]]></returns>
+        [HttpPut("UpdateStatus")]
+        public async Task<IActionResult> UpdateStatus(Status status, long id)
+        {
+            var result = await _mainAppService.UpdateStatus(status, id);
+
+            return Ok(result);
+        }
+
+        /// <summary>
 		/// Dispose
 		/// </summary>
 		/// <param name="disposing"></param>

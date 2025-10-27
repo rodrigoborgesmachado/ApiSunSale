@@ -43,22 +43,6 @@ namespace ApiSunSale.Application.Services
             return result.ProjectedAs<MainDTO>();
         }
 
-        public async Task<MainDTO> UpdateStatus(Status status, long id)
-        {
-            var main = await _mainRepository.GetByIdAsync(id);
-            
-            if (main == null)
-                throw new Exception("Object not found");
-            
-            main.IsActive = (byte)(status == Status.IsActive ? 1 : 0);
-            main.IsDeleted = (byte)(status == Status.IsDeleted ? 1 : 0);
-            _mainRepository.Update(main);
-
-            await _mainRepository.CommitAsync();
-
-            return main.ProjectedAs<MainDTO>();
-        }
-
         public async Task<Tuple<int, int, IEnumerable<MainDTO>>> GetAllPagedAsync(int page, int quantity, DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null)
         {
             var tuple = await _mainRepository.GetAllPagedAsync(page, quantity, startDate, endDate, isActive, term, orderBy, IncludesMethods.GetIncludes(include, allowInclude));
@@ -111,6 +95,21 @@ namespace ApiSunSale.Application.Services
 
             await _loggerService.InsertAsync($"Report - Finishing GetReport - {this.GetType().Name}");
             return link;
+        }
+        public async Task<MainDTO> UpdateStatus(Status status, long id)
+        {
+            var main = await _mainRepository.GetByIdAsync(id);
+
+            if (main == null)
+                throw new Exception("Object not found");
+
+            main.IsActive = (byte)(status == Status.IsActive ? 1 : 0);
+            main.IsDeleted = (byte)(status == Status.IsDeleted ? 1 : 0);
+            _mainRepository.Update(main);
+
+            await _mainRepository.CommitAsync();
+
+            return main.ProjectedAs<MainDTO>();
         }
 
         public void Dispose()

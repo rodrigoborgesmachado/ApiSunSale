@@ -19,5 +19,6 @@ namespace ApiSunSale.Application.Interfaces
         Task<string> GetReport(DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null);
 
         Task<MainDTO> GetByEmailAsync(string email, string? include = null);
+        Task<MainDTO> UpdateStatus(Status status, long id);
     }
 }

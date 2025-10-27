@@ -96,6 +96,21 @@ namespace ApiSunSale.Application.Services
             return link;
         }
 
+        public async Task<MainDTO> UpdateStatus(Status status, long id)
+        {
+            var main = await _mainRepository.GetByIdAsync(id);
+
+            if (main == null)
+                throw new Exception("Object not found");
+
+            main.IsActive = (byte)(status == Status.IsActive ? 1 : 0);
+            main.IsDeleted = (byte)(status == Status.IsDeleted ? 1 : 0);
+            _mainRepository.Update(main);
+
+            await _mainRepository.CommitAsync();
+
+            return main.ProjectedAs<MainDTO>();
+        }
         public void Dispose()
         {
             _mainRepository.Dispose();

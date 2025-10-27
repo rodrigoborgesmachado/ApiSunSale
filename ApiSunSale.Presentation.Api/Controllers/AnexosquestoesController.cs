@@ -159,10 +159,23 @@ namespace ApiSunSale.Presentation.Api.Controllers
         }
 
         /// <summary>
-		/// Dispose
-		/// </summary>
-		/// <param name="disposing"></param>
-		/// <returns><![CDATA[]]></returns>
+        /// Update
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns><![CDATA[Task<IActionResult>]]></returns>
+        [HttpPut("UpdateStatus")]
+        public async Task<IActionResult> UpdateStatus(Status status, long id)
+        {
+            var result = await _mainAppService.UpdateStatus(status, id);
+
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        /// <param name="disposing"></param>
+        /// <returns><![CDATA[]]></returns>
         public void Dispose()
         {
             _mainAppService.Dispose();
