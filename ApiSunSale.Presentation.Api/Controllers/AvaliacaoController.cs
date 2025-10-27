@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IAvaliacaoAppService;
 using MainDTO = ApiSunSale.Application.DTO.AvaliacaoDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.AvaliacaoViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

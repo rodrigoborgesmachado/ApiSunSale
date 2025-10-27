@@ -1,3 +1,4 @@
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using MainDTO = ApiSunSale.Application.DTO.NotascortesisuDTO;
 
 namespace ApiSunSale.Application.Interfaces
@@ -17,6 +18,6 @@ namespace ApiSunSale.Application.Interfaces
         Task<Tuple<int, int, IEnumerable<MainDTO>>> GetAllPagedAsync(int page, int quantity, DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null);
 
         Task<string> GetReport(DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null);
-        Task<string> GetReport(DateTime? startDate, DateTime? endDate, string isActive = null, string term = null, string orderBy = null, string? include = null);
+        Task<MainDTO> UpdateStatus(Status status, long id);
     }
 }

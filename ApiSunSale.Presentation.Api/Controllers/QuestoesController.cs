@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IQuestoesAppService;
 using MainDTO = ApiSunSale.Application.DTO.QuestoesDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.QuestoesViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

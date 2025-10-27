@@ -1,3 +1,4 @@
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using MainDTO = ApiSunSale.Application.DTO.QuestoesDTO;
 
 namespace ApiSunSale.Application.Interfaces

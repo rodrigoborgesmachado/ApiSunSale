@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.ITipoperfilAppService;
 using MainDTO = ApiSunSale.Application.DTO.TipoperfilDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.TipoperfilViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

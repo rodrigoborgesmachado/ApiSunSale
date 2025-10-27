@@ -9,6 +9,7 @@ using IMainAppService = ApiSunSale.Application.Interfaces.IUsuariosAppService;
 using MainDTO = ApiSunSale.Application.DTO.UsuariosDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.UsuariosViewModel;
 using ApiSunSale.Presentation.Model.Requests;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

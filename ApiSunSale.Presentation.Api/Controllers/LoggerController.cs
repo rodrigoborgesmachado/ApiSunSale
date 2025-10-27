@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.ILoggerAppService;
 using MainDTO = ApiSunSale.Application.DTO.LoggerDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.LoggerViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

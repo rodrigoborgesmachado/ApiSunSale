@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.ICrudformsinstaladorAppService;
 using MainDTO = ApiSunSale.Application.DTO.CrudformsinstaladorDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.CrudformsinstaladorViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

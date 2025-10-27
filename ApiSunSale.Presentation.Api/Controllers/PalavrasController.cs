@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IPalavrasAppService;
 using MainDTO = ApiSunSale.Application.DTO.PalavrasDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.PalavrasViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

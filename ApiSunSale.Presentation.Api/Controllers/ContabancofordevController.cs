@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IContabancofordevAppService;
 using MainDTO = ApiSunSale.Application.DTO.ContabancofordevDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.ContabancofordevViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

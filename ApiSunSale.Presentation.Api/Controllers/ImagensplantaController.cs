@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IImagensplantaAppService;
 using MainDTO = ApiSunSale.Application.DTO.ImagensplantaDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.ImagensplantaViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

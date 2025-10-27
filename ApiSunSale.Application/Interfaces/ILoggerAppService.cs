@@ -1,4 +1,5 @@
 using ApiSunSale.Infrastructure.CrossCutting.Mail;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using MainDTO = ApiSunSale.Application.DTO.LoggerDTO;
 
 namespace ApiSunSale.Application.Interfaces

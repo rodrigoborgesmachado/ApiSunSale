@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.ITipopostagemAppService;
 using MainDTO = ApiSunSale.Application.DTO.TipopostagemDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.TipopostagemViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

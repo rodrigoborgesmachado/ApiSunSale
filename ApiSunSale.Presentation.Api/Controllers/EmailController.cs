@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IEmailAppService;
 using MainDTO = ApiSunSale.Application.DTO.EmailDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.EmailViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {

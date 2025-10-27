@@ -1,3 +1,4 @@
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 using MainDTO = ApiSunSale.Application.DTO.ContabancofordevDTO;
 
 namespace ApiSunSale.Application.Interfaces

@@ -7,6 +7,7 @@ using MainDTO = ApiSunSale.Application.DTO.ImagensplantaDTO;
 using Microsoft.Extensions.Options;
 using ApiSunSale.Domain.ModelClasses;
 using ApiSunSale.Application.Helpers;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Application.Services
 {

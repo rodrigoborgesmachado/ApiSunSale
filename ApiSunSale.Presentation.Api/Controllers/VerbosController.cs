@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using IMainAppService = ApiSunSale.Application.Interfaces.IVerbosAppService;
 using MainDTO = ApiSunSale.Application.DTO.VerbosDTO;
 using MainViewModel = ApiSunSale.Presentation.Model.ViewModels.VerbosViewModel;
+using static ApiSunSale.Infrastructure.CrossCutting.Enums.Enums;
 
 namespace ApiSunSale.Presentation.Api.Controllers
 {
